@@ -6,8 +6,8 @@ class fileList:
     __root = Tk()
     __filename = StringVar()
     __list = []
-    __thisControlFrame = Frame(__root)
-    __textArea = Text(__root)
+    __thisControlFrame = Frame(__root, borderwidth=2, relief=SUNKEN, pady=5, bg="#AAA")
+    __textArea = Text(__root, font="monaco")
     __thisScrollBar = Scrollbar(__textArea)
 
     def __init__(self):
@@ -15,16 +15,18 @@ class fileList:
         self.__root.geometry("400x300")
         self.__root.grid_rowconfigure(0, weight=1)
         self.__root.grid_columnconfigure(0, weight=1)
-        self.__textArea.grid(sticky=N + E + S + W, )
+        self.__textArea.grid(sticky=N + E + S + W, padx=10)
         self.__thisScrollBar.pack(side=RIGHT, fill=Y)
         self.__thisScrollBar.config(command=self.__textArea.yview)
         self.__textArea.config(yscrollcommand=self.__thisScrollBar.set)
-        self.__thisControlFrame.grid(sticky=N + E + S + W, row=1, column=0)
+        self.__thisControlFrame.grid(sticky=N + E + S + W, row=1, column=0, padx=10, pady=10)
 
+        self.__thisControlFrame.grid_columnconfigure(0, weight=1)
+        self.__thisControlFrame.grid_rowconfigure(0, weight=1)
         fname = Entry(self.__thisControlFrame, textvariable=self.__filename)
-        fname.pack(side=LEFT)
-        click = Button(self.__thisControlFrame, text="list", command=self.searchfile)
-        click.pack(side=LEFT)
+        fname.grid(sticky=E + W, padx=10)
+        click = Button(self.__thisControlFrame, text="list", command=self.searchfile, width=20, font="monaco")
+        click.grid(row=0, column=1, padx=10)
 
     def run(self):
         self.__root.mainloop()
