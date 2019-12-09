@@ -2,7 +2,10 @@
   <dictionary name="root">
     <words>
       <w>fname</w>
+      <w>getv</w>
+      <w>pswd</w>
       <w>searchfile</w>
+      <w>sujan</w>
       <w>teditor</w>
     </words>
   </dictionary>
