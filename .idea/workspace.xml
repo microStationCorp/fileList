@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/root.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/root.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1.0.1/fileList_1.0.1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/filelist.py" afterDir="false" />
     </list>
@@ -30,10 +30,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tkinter_tuts/tut.py" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tut1.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.tut">
+  <component name="RunManager" selected="Python.filelist">
     <configuration name="filelist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -68,27 +69,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../teditor/teditor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="teditor_1.0.1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="filelist" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../teditor/v1.0.1" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../teditor/v1.0.1/teditor_1.0.1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -139,13 +119,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tut1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="filelist" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../tut1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tut" />
         <item itemvalue="Python.filelist" />
+        <item itemvalue="Python.tut" />
+        <item itemvalue="Python.tut1" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.teditor" />
-        <item itemvalue="Python.teditor_1.0.1" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575870340753</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="search ability upgraded , now you can search more efficiently , using the starting letters">
+      <created>1575897210829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575897210829</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,37 +221,38 @@
     <MESSAGE value="scrollbar added" />
     <MESSAGE value="button and entry edited , it is not final" />
     <MESSAGE value="text area entry disabled" />
-    <option name="LAST_COMMIT_MESSAGE" value="text area entry disabled" />
+    <MESSAGE value="search ability upgraded , now you can search more efficiently , using the starting letters" />
+    <option name="LAST_COMMIT_MESSAGE" value="search ability upgraded , now you can search more efficiently , using the starting letters" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1575870340347">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1575897210551">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1575870340347" />
-    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1575871776853">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1575897210551" />
+    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1575898816047">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1575871776853" />
-    <state width="452" height="147" key="GridCell.Tab.0.bottom" timestamp="1575897094527">
+    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1575898816047" />
+    <state width="452" height="147" key="GridCell.Tab.0.bottom" timestamp="1575900518498">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1575897094527" />
-    <state width="452" height="147" key="GridCell.Tab.0.center" timestamp="1575897094527">
+    <state width="452" height="147" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1575900518498" />
+    <state width="452" height="147" key="GridCell.Tab.0.center" timestamp="1575900518497">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1575897094527" />
-    <state width="452" height="147" key="GridCell.Tab.0.left" timestamp="1575897094526">
+    <state width="452" height="147" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1575900518497" />
+    <state width="452" height="147" key="GridCell.Tab.0.left" timestamp="1575900518496">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1575897094526" />
-    <state width="452" height="147" key="GridCell.Tab.0.right" timestamp="1575897094527">
+    <state width="452" height="147" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1575900518496" />
+    <state width="452" height="147" key="GridCell.Tab.0.right" timestamp="1575900518497">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1575897094527" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1575831428368">
+    <state width="452" height="147" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1575900518497" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1575897269567">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1575831428368" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1575897269567" />
     <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1575869855632">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
