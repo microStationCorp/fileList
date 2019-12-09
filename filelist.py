@@ -20,6 +20,7 @@ class fileList:
         self.__thisScrollBar.config(command=self.__textArea.yview)
         self.__textArea.config(yscrollcommand=self.__thisScrollBar.set)
         self.__thisControlFrame.grid(sticky=N + E + S + W, row=1, column=0, padx=10, pady=10)
+        self.__textArea.config(state="disabled")
 
         self.__thisControlFrame.grid_columnconfigure(0, weight=1)
         self.__thisControlFrame.grid_rowconfigure(0, weight=1)
@@ -32,6 +33,7 @@ class fileList:
         self.__root.mainloop()
 
     def searchfile(self):
+        self.__textArea.config(state='normal')
         self.__textArea.delete(0.0, END)
         try:
             self.__list = os.listdir(self.__filename.get())
@@ -44,6 +46,7 @@ class fileList:
             self.__textArea.insert(END, "it is a file")
         except FileNotFoundError:
             self.__textArea.insert(END, "file not found")
+        self.__textArea.config(state="disabled")
 
 
 list = fileList()
