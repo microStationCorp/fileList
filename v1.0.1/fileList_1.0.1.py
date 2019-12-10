@@ -16,6 +16,7 @@ class fileList:
         self.__root.grid_rowconfigure(0, weight=1)
         self.__root.grid_columnconfigure(0, weight=1)
         self.__textArea.grid(sticky=N + E + S + W, padx=10)
+        self.__filename.trace("w", self.searchfile)
         self.__thisScrollBar.pack(side=RIGHT, fill=Y)
         self.__thisScrollBar.config(command=self.__textArea.yview)
         self.__textArea.config(yscrollcommand=self.__thisScrollBar.set)
@@ -24,28 +25,24 @@ class fileList:
 
         self.__thisControlFrame.grid_columnconfigure(0, weight=1)
         self.__thisControlFrame.grid_rowconfigure(0, weight=1)
-        fname = Entry(self.__thisControlFrame, textvariable=self.__filename)
-        fname.grid(sticky=E + W + N + S, padx=10)
+        Label(self.__thisControlFrame, text="Direction", bg="#AAA", font="monaco 12 bold").grid(pady=5)
+        fname = Entry(self.__thisControlFrame, textvariable=self.__filename, font='monaco')
+        fname.grid(sticky=E + W + N + S, padx=30, row=1, column=0)
         fname.focus_set()
-        click = Button(self.__thisControlFrame, text="list", command=self.searchfile, width=12, font="monaco")
-        click.grid(sticky=E + W + N + S, row=0, column=1, padx=10)
 
     def run(self):
         self.__root.mainloop()
 
-    def searchfile(self):
+    def searchfile(self, *args):
         self.__textArea.config(state='normal')
         self.__textArea.delete(0.0, END)
         try:
-            if not self.__filename.get().endswith("/"):
-                self.__list = os.listdir(self.__filename.get())
-                for i in self.__list:
-                    if os.path.isfile(self.__filename.get() + f"/{i}"):
-                        self.__textArea.insert(END, f"{i}  (file)\n")
-                    else:
-                        self.__textArea.insert(END, f"{i}  (folder)\n")
-            else:
-                self.__textArea.insert(INSERT, "remove \"/\" from the last of file direction")
+            self.__list = os.listdir(self.__filename.get())
+            for i in self.__list:
+                if os.path.isfile(self.__filename.get() + f"/{i}"):
+                    self.__textArea.insert(END, f"{i}  (file)\n")
+                else:
+                    self.__textArea.insert(END, f"{i}  (folder)\n")
         except NotADirectoryError:
             self.__textArea.insert(END, "it is a file")
         except FileNotFoundError:
@@ -61,8 +58,10 @@ class fileList:
                 if flag == False:
                     self.__textArea.insert(END, "File/Folder Not Found")
             except FileNotFoundError:
-                self.__textArea.insert(END, "Invalid Address")
-
+                if self.__filename.get() == "":
+                    self.__textArea.insert(INSERT, "please insert file direction")
+                else:
+                    self.__textArea.insert(END, "Invalid Address")
         self.__textArea.config(state="disabled")
 
 

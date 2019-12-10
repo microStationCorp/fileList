@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/v1.0.1/fileList_1.0.1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filelist.py" beforeDir="false" afterPath="$PROJECT_DIR$/filelist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1.0.1/fileList_1.0.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.1/fileList_1.0.1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +31,30 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tut1.py" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
-  <component name="RunManager" selected="Python.filelist">
+  <component name="RunManager" selected="Python.fileList_1.0.1">
+    <configuration name="fileList_1.0.1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="filelist" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/v1.0.1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/v1.0.1/fileList_1.0.1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="filelist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -48,27 +68,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filelist.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="teditor" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="filelist" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../teditor" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../teditor/teditor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.fileList_1.0.1" />
         <item itemvalue="Python.filelist" />
         <item itemvalue="Python.tut" />
         <item itemvalue="Python.tut1" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.teditor" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575897210829</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="new version added , which can search automatically , with a keypress">
+      <created>1575900660940</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575900660940</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,40 +228,45 @@
     <MESSAGE value="button and entry edited , it is not final" />
     <MESSAGE value="text area entry disabled" />
     <MESSAGE value="search ability upgraded , now you can search more efficiently , using the starting letters" />
-    <option name="LAST_COMMIT_MESSAGE" value="search ability upgraded , now you can search more efficiently , using the starting letters" />
+    <MESSAGE value="new version added , which can search automatically , with a keypress" />
+    <option name="LAST_COMMIT_MESSAGE" value="new version added , which can search automatically , with a keypress" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1575897210551">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1575900660820">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1575897210551" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1575900660820" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1575898816047">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1575898816047" />
-    <state width="452" height="147" key="GridCell.Tab.0.bottom" timestamp="1575900518498">
+    <state width="442" height="143" key="GridCell.Tab.0.bottom" timestamp="1575956757332">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1575900518498" />
-    <state width="452" height="147" key="GridCell.Tab.0.center" timestamp="1575900518497">
+    <state width="442" height="143" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1575956757332" />
+    <state width="442" height="143" key="GridCell.Tab.0.center" timestamp="1575956757332">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1575900518497" />
-    <state width="452" height="147" key="GridCell.Tab.0.left" timestamp="1575900518496">
+    <state width="442" height="143" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1575956757332" />
+    <state width="442" height="143" key="GridCell.Tab.0.left" timestamp="1575956757331">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1575900518496" />
-    <state width="452" height="147" key="GridCell.Tab.0.right" timestamp="1575900518497">
+    <state width="442" height="143" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1575956757331" />
+    <state width="442" height="143" key="GridCell.Tab.0.right" timestamp="1575956757332">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="452" height="147" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1575900518497" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1575897269567">
+    <state width="442" height="143" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1575956757332" />
+    <state x="0" y="31" key="SettingsEditor" timestamp="1575955418021">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1575897269567" />
-    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1575869855632">
+    <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1575955418021" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1575900688184">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1575869855632" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1575900688184" />
+    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1575955386578">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1575955386578" />
   </component>
 </project>
