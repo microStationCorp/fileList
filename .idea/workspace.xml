@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
+    <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="now in v1.0.1 , file list every time refreshed with every keypressed&#10;and minor upgradation has down">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v1.0.1/fileList_1.0.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.1/fileList_1.0.1.py" afterDir="false" />
     </list>
@@ -19,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Uhz04M2oLUSTFxKwCEKsSXw2zb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -142,10 +143,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.fileList_1.0.1" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.tut1" />
         <item itemvalue="Python.filelist" />
         <item itemvalue="Python.tut" />
-        <item itemvalue="Python.tut1" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575900660940</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="now in v1.0.1 , file list every time refreshed with every keypressed&#10;and minor upgradation has down">
+      <created>1575956935594</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575956935594</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,41 +237,46 @@
     <MESSAGE value="text area entry disabled" />
     <MESSAGE value="search ability upgraded , now you can search more efficiently , using the starting letters" />
     <MESSAGE value="new version added , which can search automatically , with a keypress" />
-    <option name="LAST_COMMIT_MESSAGE" value="new version added , which can search automatically , with a keypress" />
+    <MESSAGE value="now in v1.0.1 , file list every time refreshed with every keypressed&#10;and minor upgradation has down" />
+    <option name="LAST_COMMIT_MESSAGE" value="now in v1.0.1 , file list every time refreshed with every keypressed&#10;and minor upgradation has down" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1575900660820">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576056743517">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1575900660820" />
-    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1575898816047">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576056743517" />
+    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576056504078">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1575898816047" />
-    <state width="442" height="143" key="GridCell.Tab.0.bottom" timestamp="1575956757332">
+    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1576056504078" />
+    <state width="1343" height="97" key="GridCell.Tab.0.bottom" timestamp="1576058028316">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="442" height="143" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1575956757332" />
-    <state width="442" height="143" key="GridCell.Tab.0.center" timestamp="1575956757332">
+    <state width="1343" height="97" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576058028316" />
+    <state width="1343" height="97" key="GridCell.Tab.0.center" timestamp="1576058028316">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="442" height="143" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1575956757332" />
-    <state width="442" height="143" key="GridCell.Tab.0.left" timestamp="1575956757331">
+    <state width="1343" height="97" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576058028316" />
+    <state width="1343" height="97" key="GridCell.Tab.0.left" timestamp="1576058028316">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="442" height="143" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1575956757331" />
-    <state width="442" height="143" key="GridCell.Tab.0.right" timestamp="1575956757332">
+    <state width="1343" height="97" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576058028316" />
+    <state width="1343" height="97" key="GridCell.Tab.0.right" timestamp="1576058028316">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="442" height="143" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1575956757332" />
+    <state width="1343" height="97" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576058028316" />
     <state x="0" y="31" key="SettingsEditor" timestamp="1575955418021">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1575955418021" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1575900688184">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1575956974007">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1575900688184" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1575956974007" />
+    <state x="455" y="316" width="445" height="156" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576057360739">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="455" y="316" width="445" height="156" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.24.1366.744@0.24.1366.744" timestamp="1576057360739" />
     <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1575955386578">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

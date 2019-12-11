@@ -44,7 +44,7 @@ class fileList:
                 else:
                     self.__textArea.insert(END, f"{i}  (folder)\n")
         except NotADirectoryError:
-            self.__textArea.insert(END, "it is a file")
+            self.__textArea.insert(END, f"{os.path.basename(self.__filename.get())} is a file")
         except FileNotFoundError:
             dirName = os.path.dirname(self.__filename.get())
             baseName = os.path.basename(self.__filename.get())
@@ -53,13 +53,17 @@ class fileList:
                 flag = False
                 for i in listOfElement:
                     if baseName == i[0:len(baseName)]:
-                        self.__textArea.insert(INSERT, f"{i}\n")
+                        # self.__textArea.insert(INSERT, f"{i}\n")
+                        if os.path.isfile(dirName + f"/{i}"):
+                            self.__textArea.insert(END, f"{i}  (file)\n")
+                        else:
+                            self.__textArea.insert(END, f"{i}  (folder)\n")
                         flag = True
                 if flag == False:
-                    self.__textArea.insert(END, "File/Folder Not Found")
+                    self.__textArea.insert(END, 'File/Folder Not Found')
             except FileNotFoundError:
                 if self.__filename.get() == "":
-                    self.__textArea.insert(INSERT, "please insert file direction")
+                    self.__textArea.insert(INSERT, "please insert file/folder direction")
                 else:
                     self.__textArea.insert(END, "Invalid Address")
         self.__textArea.config(state="disabled")
