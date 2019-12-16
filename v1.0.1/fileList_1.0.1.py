@@ -5,17 +5,17 @@ from tkinter import *
 class fileList:
     __root = Tk()
     __filename = StringVar()
-    __list = []
     __thisControlFrame = Frame(__root, borderwidth=2, relief=SUNKEN, pady=5, bg="#AAA")
     __textArea = Text(__root, font="monaco", padx=5, pady=5, wrap=WORD)
     __thisScrollBar = Scrollbar(__textArea)
 
     def __init__(self):
-        self.__root.title("Files")
+        self.__root.title("FileList")
         self.__root.geometry("400x300")
         self.__root.grid_rowconfigure(0, weight=1)
         self.__root.grid_columnconfigure(0, weight=1)
         self.__textArea.grid(sticky=N + E + S + W, padx=10)
+        self.__textArea.insert(INSERT, 'please type something')
         self.__filename.trace("w", self.searchfile)
         self.__thisScrollBar.pack(side=RIGHT, fill=Y)
         self.__thisScrollBar.config(command=self.__textArea.yview)
@@ -36,24 +36,27 @@ class fileList:
     def searchfile(self, *args):
         self.__textArea.config(state='normal')
         self.__textArea.delete(0.0, END)
-        try:
-            self.__list = os.listdir(self.__filename.get())
-            for i in self.__list:
-                if os.path.isfile(self.__filename.get() + f"/{i}"):
-                    self.__textArea.insert(END, f"{i}  (file)\n")
-                else:
-                    self.__textArea.insert(END, f"{i}  (folder)\n")
-        except NotADirectoryError:
-            self.__textArea.insert(END, f"{os.path.basename(self.__filename.get())} is a file")
-        except FileNotFoundError:
-            dirName = os.path.dirname(self.__filename.get())
-            baseName = os.path.basename(self.__filename.get())
+        dirName = os.path.dirname(self.__filename.get())
+        baseName = os.path.basename(self.__filename.get())
+
+        if '' == self.__filename.get():
+            self.__root.title("FileList")
+            self.__textArea.insert(INSERT, 'please type something')
+        elif '/' == self.__filename.get()[len(self.__filename.get()) - 1]:
+            if 0 == self.directionCheck(self.__filename.get()):
+                self.__root.title(f'{dirName} - FileList')
+                self.insertFileListInTextArea(self.__filename.get())
+            elif 1 == self.directionCheck(self.__filename.get()):
+                self.__textArea.insert(INSERT, f'{dirName} :\nnot a directory')
+            elif 2 == self.directionCheck(self.__filename.get()):
+                self.__textArea.insert(INSERT, f'{dirName} :\nfile/folder not found')
+        else:
+            self.__root.title(f'{dirName} - FileList')
             try:
                 listOfElement = os.listdir(dirName)
                 flag = False
                 for i in listOfElement:
-                    if baseName == i[0:len(baseName)]:
-                        # self.__textArea.insert(INSERT, f"{i}\n")
+                    if i[0:len(baseName)] == baseName:
                         if os.path.isfile(dirName + f"/{i}"):
                             self.__textArea.insert(END, f"{i}  (file)\n")
                         else:
@@ -62,12 +65,28 @@ class fileList:
                 if flag == False:
                     self.__textArea.insert(END, 'File/Folder Not Found')
             except FileNotFoundError:
-                if self.__filename.get() == "":
-                    self.__textArea.insert(INSERT, "please insert file/folder direction")
-                else:
-                    self.__textArea.insert(END, "Invalid Address")
+                self.__textArea.insert(END, "Invalid Address")
+
         self.__textArea.config(state="disabled")
 
+    @staticmethod
+    def directionCheck(filename):
+        try:
+            os.listdir(filename)
+            return 0
+        except NotADirectoryError:
+            return 1
+        except FileNotFoundError:
+            return 2
 
-list = fileList()
-list.run()
+    def insertFileListInTextArea(self, filename):
+        __list = os.listdir(filename)
+        for i in __list:
+            if os.path.isfile(filename + f"/{i}"):
+                self.__textArea.insert(END, f"{i}  (file)\n")
+            else:
+                self.__textArea.insert(END, f"{i}  (folder)\n")
+
+
+List = fileList()
+List.run()
