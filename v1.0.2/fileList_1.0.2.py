@@ -7,19 +7,24 @@ class fileList:
     __filename = StringVar()
     __thisControlFrame = Frame(__root, borderwidth=2, relief=SUNKEN, pady=5, bg="#AAA")
     __listArea = Listbox(__root)
-    __thisScrollBar = Scrollbar(__listArea)
+    __thisScrollBarSide = Scrollbar(__listArea)
+    __thisScrollBarBottom = Scrollbar(__listArea)
 
     def __init__(self):
         self.__root.title("FileList")
-        self.__root.geometry("400x300")
+        self.__root.geometry("500x500")
+        self.__root.minsize(500, 500)
         self.__root.grid_rowconfigure(0, weight=1)
         self.__root.grid_columnconfigure(0, weight=1)
         self.__listArea.grid(sticky=N + E + S + W, padx=10)
         self.__listArea.insert(0, ' please type something')
         self.__filename.trace("w", self.searchfile)
-        self.__thisScrollBar.pack(side=RIGHT, fill=Y)
-        self.__thisScrollBar.config(command=self.__listArea.yview)
-        self.__listArea.config(yscrollcommand=self.__thisScrollBar.set)
+        self.__thisScrollBarSide.pack(side=RIGHT, fill=Y)
+        self.__thisScrollBarSide.config(command=self.__listArea.yview)
+        self.__listArea.config(yscrollcommand=self.__thisScrollBarSide.set)
+        self.__thisScrollBarBottom.pack(side=BOTTOM, fill=X)
+        self.__thisScrollBarBottom.config(command=self.__listArea.xview, orient=HORIZONTAL)
+        self.__listArea.config(xscrollcommand=self.__thisScrollBarBottom.set)
         self.__thisControlFrame.grid(sticky=N + E + S + W, row=1, column=0, padx=10, pady=10)
         self.__listArea.config(font='monaco 11')
 
@@ -37,13 +42,14 @@ class fileList:
         # self.__buttonOpen.pack(side=LEFT)
 
     def selectPath(self):
-        s = self.__listArea.get(ACTIVE)
-        sl = s.split(' ')
-        val = ''
-        for i in range(len(sl[1]) - len(self.__baseName)):
-            val = val + sl[1][i + len(self.__baseName)]
-        self.__fname.insert(END, f'{val}/')
-        self.__fname.focus_set()
+        if self.__listArea.get(ACTIVE) != ' please type something':
+            s = self.__listArea.get(ACTIVE)
+            sl = s.split(' ')
+            val = ''
+            for i in range(len(sl[1]) - len(self.__baseName)):
+                val = val + sl[1][i + len(self.__baseName)]
+            self.__fname.insert(END, f'{val}/')
+            self.__fname.focus_set()
 
     def run(self):
         self.__root.mainloop()
