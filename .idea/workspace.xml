@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/v1.0.2/fileList_1.0.2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576058062676</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="new version added (v1.0.2)&#10;listbox used , instead of textArea">
+      <created>1576640131662</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576640131662</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,37 +252,42 @@
     <MESSAGE value="new version added , which can search automatically , with a keypress" />
     <MESSAGE value="now in v1.0.1 , file list every time refreshed with every keypressed&#10;and minor upgradation has down" />
     <MESSAGE value="minor bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor bug fixes" />
+    <MESSAGE value="new version added (v1.0.2)&#10;listbox used , instead of textArea" />
+    <option name="LAST_COMMIT_MESSAGE" value="new version added (v1.0.2)&#10;listbox used , instead of textArea" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="48" y="57" width="800" height="673" key="#Code_Folding/0.24.1366.744@0.24.1366.744" timestamp="1576642528529" />
     <state x="48" y="57" width="800" height="673" key="#Inspections" timestamp="1576596257236">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576058062519">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576640131413">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576058062519" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576640131413" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576592868022">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1576592868022" />
-    <state width="457" height="687" key="GridCell.Tab.0.bottom" timestamp="1576640065106">
+    <state width="457" height="687" key="GridCell.Tab.0.bottom" timestamp="1576646886616">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="687" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576640065106" />
-    <state width="457" height="687" key="GridCell.Tab.0.center" timestamp="1576640065106">
+    <state width="457" height="687" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576646886616" />
+    <state width="457" height="687" key="GridCell.Tab.0.center" timestamp="1576646886616">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="687" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576640065106" />
-    <state width="457" height="687" key="GridCell.Tab.0.left" timestamp="1576640065105">
+    <state width="457" height="687" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576646886616" />
+    <state width="457" height="687" key="GridCell.Tab.0.left" timestamp="1576646886616">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="687" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576640065105" />
-    <state width="457" height="687" key="GridCell.Tab.0.right" timestamp="1576640065106">
+    <state width="457" height="687" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576646886616" />
+    <state width="457" height="687" key="GridCell.Tab.0.right" timestamp="1576646886616">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="687" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576640065106" />
+    <state width="457" height="687" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576646886616" />
     <state x="0" y="242" width="924" height="296" key="Performance.Activity.Monitor" timestamp="1576491009523">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -297,9 +308,9 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="635" y="24" width="722" height="739" key="dock-window-1/0.24.1366.744@0.24.1366.744" timestamp="1576482799342" />
-    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1576491370691">
+    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1576640841878">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1576491370691" />
+    <state x="112" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1576640841878" />
   </component>
 </project>
