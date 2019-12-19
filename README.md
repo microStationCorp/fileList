@@ -5,4 +5,6 @@ in widows , type in <b>direction</b> ,<br>
 in linux , type in <b>direction</b> ,<br>
 <i>/<folder_name>/</i><br>
 
-Atfirst you use it , you have to know some basic structure of computer file system
+Atfirst you use it , you have to know some basic structure of computer file system<br>
+
+<b>Author : Sherlock</b>
