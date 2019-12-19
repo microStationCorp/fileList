@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576779533134</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="now can run a file">
+      <created>1576780747023</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1576780747023</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,7 +312,8 @@
     <MESSAGE value="new initiate for version 1.0.3&#10;target is gain code efficiency , better logic and future extinsible" />
     <MESSAGE value="minor bug fixes&#10;now can operate file name or folder name with space" />
     <MESSAGE value="minor bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor bug fixes" />
+    <MESSAGE value="now can run a file" />
+    <option name="LAST_COMMIT_MESSAGE" value="now can run a file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -315,10 +324,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576779533043">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576780746905">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576779533043" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576780746905" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576592868022">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -363,10 +372,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1576491179542" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576779548360">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576780756345">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576779548360" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576780756345" />
     <state x="455" y="316" width="445" height="156" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576057360739">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

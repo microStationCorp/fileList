@@ -1,6 +1,5 @@
 import os
 import subprocess
-import sys
 from tkinter import *
 
 
@@ -51,7 +50,7 @@ class fileList:
             s = self.__listArea.get(ACTIVE)
             s = re.sub('^ ', '', s)
             s = re.sub(' {2}\(file\)$', '', s)
-            url=os.path.join(self.__dirName,s)
+            url = os.path.join(self.__dirName, s)
             if os.name == 'posix':
                 subprocess.call(('xdg-open', url))
             elif os.name == 'nt':
