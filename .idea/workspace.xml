@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.2/fileList_1.0.2.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.2/fileList_1.0.2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tut1.py" />
     <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
-  <component name="RunManager" selected="Python.fileList_1.0.2">
+  <component name="RunManager" selected="Python.fileList_1.0.3">
     <configuration name="fileList_1.0.1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,7 +81,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="filelist" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="fileList_1.0.3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,11 +89,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/v1.0.3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filelist.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fileList_1.0.2" />
+        <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.tut1" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.fileList_1.0.2" />
         <item itemvalue="Python.fileList_1.0.1" />
-        <item itemvalue="Python.filelist" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576775224805</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="minor bug fixes">
+      <created>1576777771330</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1576777771330</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,13 +292,13 @@
     <MESSAGE value="search ability upgraded , now you can search more efficiently , using the starting letters" />
     <MESSAGE value="new version added , which can search automatically , with a keypress" />
     <MESSAGE value="now in v1.0.1 , file list every time refreshed with every keypressed&#10;and minor upgradation has down" />
-    <MESSAGE value="minor bug fixes" />
     <MESSAGE value="new version added (v1.0.2)&#10;listbox used , instead of textArea" />
     <MESSAGE value="'Select' Button added&#10;now you dont have to type full name of a folder or file, you can select the folder or file to go enter" />
     <MESSAGE value="small bug fixes&#10;horizontal scrollbar added" />
     <MESSAGE value="new initiate for version 1.0.3&#10;target is gain code efficiency , better logic and future extinsible" />
     <MESSAGE value="minor bug fixes&#10;now can operate file name or folder name with space" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor bug fixes&#10;now can operate file name or folder name with space" />
+    <MESSAGE value="minor bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor bug fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -302,30 +309,30 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576775224161">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576777771192">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576775224161" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576777771192" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576592868022">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1576592868022" />
-    <state width="401" height="688" key="GridCell.Tab.0.bottom" timestamp="1576777685053">
+    <state width="401" height="688" key="GridCell.Tab.0.bottom" timestamp="1576779432764">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576777685053" />
-    <state width="401" height="688" key="GridCell.Tab.0.center" timestamp="1576777685053">
+    <state width="401" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576779432764" />
+    <state width="401" height="688" key="GridCell.Tab.0.center" timestamp="1576779432763">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576777685053" />
-    <state width="401" height="688" key="GridCell.Tab.0.left" timestamp="1576777685053">
+    <state width="401" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576779432763" />
+    <state width="401" height="688" key="GridCell.Tab.0.left" timestamp="1576779432763">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576777685053" />
-    <state width="401" height="688" key="GridCell.Tab.0.right" timestamp="1576777685053">
+    <state width="401" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576779432763" />
+    <state width="401" height="688" key="GridCell.Tab.0.right" timestamp="1576779432764">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576777685053" />
+    <state width="401" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576779432764" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
