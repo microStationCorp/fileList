@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/icon/icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/icon/icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.2/fileList_1.0.2.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.2/fileList_1.0.2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,19 +24,22 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Uhz04M2oLUSTFxKwCEKsSXw2zb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tut1.py" />
     <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.tut1">
     <configuration name="fileList_1.0.1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,8 +147,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.tut1" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.fileList_1.0.2" />
         <item itemvalue="Python.fileList_1.0.1" />
         <item itemvalue="Python.filelist" />
@@ -236,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576646987388</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="small bug fixes&#10;horizontal scrollbar added">
+      <created>1576662287219</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576662287219</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,6 +265,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="scrollbar added" />
     <MESSAGE value="button and entry edited , it is not final" />
     <MESSAGE value="text area entry disabled" />
@@ -262,7 +275,8 @@
     <MESSAGE value="minor bug fixes" />
     <MESSAGE value="new version added (v1.0.2)&#10;listbox used , instead of textArea" />
     <MESSAGE value="'Select' Button added&#10;now you dont have to type full name of a folder or file, you can select the folder or file to go enter" />
-    <option name="LAST_COMMIT_MESSAGE" value="'Select' Button added&#10;now you dont have to type full name of a folder or file, you can select the folder or file to go enter" />
+    <MESSAGE value="small bug fixes&#10;horizontal scrollbar added" />
+    <option name="LAST_COMMIT_MESSAGE" value="small bug fixes&#10;horizontal scrollbar added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -273,30 +287,46 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576646987262">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576662286715">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576646987262" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576662286715" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576592868022">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1576592868022" />
-    <state width="457" height="688" key="GridCell.Tab.0.bottom" timestamp="1576662244253">
+    <state width="457" height="688" key="GridCell.Tab.0.bottom" timestamp="1576751157563">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576662244253" />
-    <state width="457" height="688" key="GridCell.Tab.0.center" timestamp="1576662244253">
+    <state width="457" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576751157563" />
+    <state width="457" height="688" key="GridCell.Tab.0.center" timestamp="1576751157561">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576662244253" />
-    <state width="457" height="688" key="GridCell.Tab.0.left" timestamp="1576662244253">
+    <state width="457" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576751157561" />
+    <state width="457" height="688" key="GridCell.Tab.0.left" timestamp="1576751157561">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576662244253" />
-    <state width="457" height="688" key="GridCell.Tab.0.right" timestamp="1576662244253">
+    <state width="457" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576751157561" />
+    <state width="457" height="688" key="GridCell.Tab.0.right" timestamp="1576751157562">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="457" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576662244253" />
+    <state width="457" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576751157562" />
+    <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state width="861" height="220" key="GridCell.Tab.1.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576672889589" />
+    <state width="861" height="220" key="GridCell.Tab.1.center" timestamp="1576672889588">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state width="861" height="220" key="GridCell.Tab.1.center/0.24.1366.744@0.24.1366.744" timestamp="1576672889588" />
+    <state width="861" height="220" key="GridCell.Tab.1.left" timestamp="1576672889587">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state width="861" height="220" key="GridCell.Tab.1.left/0.24.1366.744@0.24.1366.744" timestamp="1576672889587" />
+    <state width="861" height="220" key="GridCell.Tab.1.right" timestamp="1576672889589">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state width="861" height="220" key="GridCell.Tab.1.right/0.24.1366.744@0.24.1366.744" timestamp="1576672889589" />
     <state x="0" y="242" width="924" height="296" key="Performance.Activity.Monitor" timestamp="1576491009523">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -305,10 +335,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1576491179542" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576058071877">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576668839183">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576058071877" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576668839183" />
     <state x="455" y="316" width="445" height="156" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576057360739">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
