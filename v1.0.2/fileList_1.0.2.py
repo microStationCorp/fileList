@@ -1,5 +1,6 @@
 import os
 from tkinter import *
+import re
 
 
 class fileList:
@@ -44,10 +45,14 @@ class fileList:
     def selectPath(self):
         if self.__listArea.get(ACTIVE) != ' please type something':
             s = self.__listArea.get(ACTIVE)
-            sl = s.split(' ')
+            s = re.sub('^ ', '', s)
+            if s.endswith('(file)'):
+                s = re.sub(' {2}\(file\)$', '', s)
+            elif s.endswith('(folder)'):
+                s = re.sub(' {2}\(folder\)$', '', s)
             val = ''
-            for i in range(len(sl[1]) - len(self.__baseName)):
-                val = val + sl[1][i + len(self.__baseName)]
+            for i in range(len(s) - len(self.__baseName)):
+                val = val + s[i + len(self.__baseName)]
             self.__fname.insert(END, f'{val}/')
             self.__fname.focus_set()
 
