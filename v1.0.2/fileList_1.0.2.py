@@ -1,6 +1,6 @@
 import os
-from tkinter import *
 import re
+from tkinter import *
 
 
 class fileList:
@@ -39,12 +39,10 @@ class fileList:
         self.__buttonFrame.grid(row=2, column=0)
         self.__buttonSelect = Button(self.__buttonFrame, text='Select', font='monaco 11', command=self.selectPath)
         self.__buttonSelect.pack(side=LEFT)
-        # self.__buttonOpen = Button(self.__buttonFrame, text='Open', font='monaco 11',width=6)
-        # self.__buttonOpen.pack(side=LEFT)
 
     def selectPath(self):
-        if self.__listArea.get(ACTIVE) != ' please type something':
-            s = self.__listArea.get(ACTIVE)
+        s = self.__listArea.get(ACTIVE)
+        if s.endswith('(file') or s.endswith('(folder)'):
             s = re.sub('^ ', '', s)
             if s.endswith('(file)'):
                 s = re.sub(' {2}\(file\)$', '', s)
@@ -72,9 +70,9 @@ class fileList:
                 self.__root.title(f'{self.__dirName} - FileList')
                 self.insertFileListInTextArea(self.__filename.get())
             elif 1 == self.directionCheck(self.__filename.get()):
-                self.__listArea.insert(0, f' {self.__dirName} : not a directory')
+                self.__listArea.insert(0, ' not a directory')
             elif 2 == self.directionCheck(self.__filename.get()):
-                self.__listArea.insert(0, f' {self.__dirName} : file/folder not found')
+                self.__listArea.insert(0, ' file/folder not found')
         else:
             self.__root.title(f'{self.__dirName} - FileList')
             try:
