@@ -1,4 +1,6 @@
 import os
+import subprocess
+import sys
 from tkinter import *
 
 
@@ -38,11 +40,25 @@ class fileList:
         self.__buttonFrame.grid(row=2, column=0)
         self.__buttonSelect = Button(self.__buttonFrame, text='Select', font='monaco 11', command=self.selectPath)
         self.__buttonSelect.pack(side=LEFT)
-        self.__buttonOpen = Button(self.__buttonFrame, text='Run', font='monaco 11', width=6)
-        self.__buttonOpen.pack(side=LEFT)
+        self.__buttonRun = Button(self.__buttonFrame, text='Run', font='monaco 11', width=6, command=self.runFile)
+        self.__buttonRun.pack(side=LEFT)
 
     def run(self):
         self.__root.mainloop()
+
+    def runFile(self):
+        if self.__listArea.get(ACTIVE).endswith('(file)'):
+            s = self.__listArea.get(ACTIVE)
+            s = re.sub('^ ', '', s)
+            s = re.sub(' {2}\(file\)$', '', s)
+            url=os.path.join(self.__dirName,s)
+            if os.name == 'posix':
+                subprocess.call(('xdg-open', url))
+            elif os.name == 'nt':
+                os.startfile(url)
+        else:
+            self.__listArea.delete(0, END)
+            self.__listArea.insert(0, ' not a file')
 
     def selectPath(self):
         s = self.__listArea.get(ACTIVE)
