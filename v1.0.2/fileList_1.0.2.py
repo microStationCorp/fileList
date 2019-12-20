@@ -42,7 +42,7 @@ class fileList:
 
     def selectPath(self):
         s = self.__listArea.get(ACTIVE)
-        if s.endswith('(file') or s.endswith('(folder)'):
+        if s.endswith('(file)') or s.endswith('(folder)'):
             s = re.sub('^ ', '', s)
             if s.endswith('(file)'):
                 s = re.sub(' {2}\(file\)$', '', s)

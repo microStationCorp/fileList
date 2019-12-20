@@ -1,6 +1,7 @@
 import os
 import subprocess
 from tkinter import *
+from tkinter.messagebox import *
 
 
 class fileList:
@@ -105,7 +106,8 @@ class fileList:
         elif self.__filename.get() == '':
             self.__listArea.insert(0, ' please type something')
         else:
-            self.__listArea.insert(0, ' Invalid Address')
+            # self.__listArea.insert(0, ' Invalid Address')
+            showinfo('info', 'invalid Address')
 
 
 List = fileList()

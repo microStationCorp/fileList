@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1.0.2/fileList_1.0.2.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.2/fileList_1.0.2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
@@ -147,9 +152,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.tut1" />
         <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.fileList_1.0.2" />
+        <item itemvalue="Python.tut1" />
         <item itemvalue="Python.fileList_1.0.1" />
       </list>
     </recent_temporary>
@@ -282,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576780747023</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="now can run a file">
+      <created>1576781071950</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1576781071950</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,30 +336,30 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576780746905">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576781071886">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576780746905" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576781071886" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576592868022">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1576592868022" />
-    <state width="401" height="688" key="GridCell.Tab.0.bottom" timestamp="1576780690854">
+    <state width="401" height="688" key="GridCell.Tab.0.bottom" timestamp="1576864768004">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576780690854" />
-    <state width="401" height="688" key="GridCell.Tab.0.center" timestamp="1576780690853">
+    <state width="401" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576864768004" />
+    <state width="401" height="688" key="GridCell.Tab.0.center" timestamp="1576864768004">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576780690853" />
-    <state width="401" height="688" key="GridCell.Tab.0.left" timestamp="1576780690853">
+    <state width="401" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576864768004" />
+    <state width="401" height="688" key="GridCell.Tab.0.left" timestamp="1576864768003">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576780690853" />
-    <state width="401" height="688" key="GridCell.Tab.0.right" timestamp="1576780690854">
+    <state width="401" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576864768003" />
+    <state width="401" height="688" key="GridCell.Tab.0.right" timestamp="1576864768004">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576780690854" />
+    <state width="401" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576864768004" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -372,10 +384,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1576491179542" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576780756345">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576781081222">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576780756345" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576781081222" />
     <state x="455" y="316" width="445" height="156" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576057360739">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
