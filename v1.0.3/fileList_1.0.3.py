@@ -11,6 +11,8 @@ class fileList:
     __listArea = Listbox(__root)
     __thisScrollBarSide = Scrollbar(__listArea)
     __thisScrollBarBottom = Scrollbar(__listArea)
+    __dirName = ''
+    __baseName = ''
 
     def __init__(self):
         self.__root.title("FileList")
@@ -29,6 +31,8 @@ class fileList:
         self.__listArea.config(xscrollcommand=self.__thisScrollBarBottom.set)
         self.__thisControlFrame.grid(sticky=N + E + S + W, row=1, column=0, padx=10, pady=10)
         self.__listArea.config(font='monaco 11')
+        self.__listArea.bind('<Return>', self.openRunFile)
+        self.__listArea.bind('<Double-Button-1>', self.openRunFile)
 
         self.__thisControlFrame.grid_columnconfigure(0, weight=1)
         self.__thisControlFrame.grid_rowconfigure(0, weight=1)
@@ -36,78 +40,61 @@ class fileList:
         self.__fname = Entry(self.__thisControlFrame, textvariable=self.__filename, font='monaco')
         self.__fname.grid(sticky=E + W + N + S, padx=30, row=1, column=0)
         self.__fname.focus_set()
-        self.__buttonFrame = Frame(self.__thisControlFrame, borderwidth=2, relief=SUNKEN)
-        self.__buttonFrame.grid(row=2, column=0)
-        self.__buttonSelect = Button(self.__buttonFrame, text='Select', font='monaco 11', command=self.selectPath)
-        self.__buttonSelect.pack(side=LEFT)
-        self.__buttonRun = Button(self.__buttonFrame, text='Run', font='monaco 11', width=6, command=self.runFile)
-        self.__buttonRun.pack(side=LEFT)
 
     def run(self):
         self.__root.mainloop()
 
-    def runFile(self):
-        if self.__listArea.get(ACTIVE).endswith('(file)'):
-            s = self.__listArea.get(ACTIVE)
-            s = re.sub('^ ', '', s)
-            s = re.sub(' {2}\(file\)$', '', s)
-            url = os.path.join(self.__dirName, s)
-            if os.name == 'posix':
-                subprocess.call(('xdg-open', url))
-            elif os.name == 'nt':
-                os.startfile(url)
-        else:
-            self.__listArea.delete(0, END)
-            self.__listArea.insert(0, ' not a file')
-
-    def selectPath(self):
-        s = self.__listArea.get(ACTIVE)
-        if s.endswith('(file)') or s.endswith('(folder)'):
-            s = re.sub('^ ', '', s)
-            if s.endswith('(file)'):
-                s = re.sub(' {2}\(file\)$', '', s)
-            elif s.endswith('(folder)'):
-                s = re.sub(' {2}\(folder\)$', '', s)
-            val = ''
-            for i in range(len(s) - len(self.__baseName)):
-                val = val + s[i + len(self.__baseName)]
-            self.__fname.insert(END, f'{val}/')
-            self.__fname.focus_set()
-
-    def insertFileListInTextArea(self, filename):
-        try:
-            __list = os.listdir(filename)
-            for i in __list:
-                if os.path.isfile(filename + f"/{i}"):
-                    self.__listArea.insert(END, f" {i}  (file)")
-                else:
-                    self.__listArea.insert(END, f" {i}  (folder)")
-        except:
-            self.__listArea.insert(0, ' not a directory')
-
     def searchFile(self, *args):
-        self.__listArea.delete(0, END)
-        self.__dirName, self.__baseName = os.path.split(self.__filename.get())
-        if self.__filename.get().endswith('/') and os.path.exists(self.__dirName):
-            self.insertFileListInTextArea(self.__dirName)
-            self.__root.title(f'{self.__dirName}-FileList')
+        if self.__filename.get().endswith('/') and os.path.isfile(os.path.abspath(self.__filename.get())):
+            showinfo('info', 'it is a file')
+            self.__fname.delete(len(self.__filename.get()) - 1)
+            self.printList()
+        elif self.__filename.get().endswith('/') and os.path.exists(self.__filename.get()):
+            self.printList()
             if self.__listArea.size() == 0:
-                self.__listArea.insert(0, ' Folder is empty')
-        elif os.path.exists(self.__dirName):
-            self.__root.title(f'{self.__dirName}-FileList')
-            __list = os.listdir(self.__dirName)
-            for i in __list:
-                if i.startswith(self.__baseName) and os.path.isfile(os.path.join(self.__dirName, i)):
-                    self.__listArea.insert(END, f" {i}  (file)")
-                elif i.startswith(self.__baseName):
-                    self.__listArea.insert(END, f" {i}  (folder)")
+                showinfo('info', 'empty')
+                self.__fname.delete(len(self.__filename.get()) - 1)
+                self.printList()
+        elif not self.__filename.get().endswith('/') and os.path.exists(os.path.dirname(self.__filename.get())):
+            self.printList()
             if self.__listArea.size() == 0:
-                self.__listArea.insert(0, ' File or folder not found')
+                showinfo('info', 'not found')
+                self.__fname.delete(len(self.__filename.get()) - 1)
+                self.printList()
+        elif self.__filename.get().endswith('/') and not os.path.exists(os.path.dirname(self.__filename.get())):
+            showinfo('info', 'invalid')
+            self.__fname.delete(len(self.__filename.get()) - 1)
+            self.printList()
         elif self.__filename.get() == '':
-            self.__listArea.insert(0, ' please type something')
-        else:
-            # self.__listArea.insert(0, ' Invalid Address')
-            showinfo('info', 'invalid Address')
+            self.__listArea.delete(0, END)
+            self.__root.title("FileList")
+
+    def printList(self):
+        self.__dirName, self.__baseName = os.path.split(self.__filename.get())
+        __list = os.listdir(self.__dirName)
+        self.__listArea.delete(0, END)
+        self.__root.title(f"{self.__dirName} - FileList")
+        for i in __list:
+            if i.startswith(self.__baseName) and os.path.isfile(os.path.join(self.__dirName, i)):
+                self.__listArea.insert(END, f'{i}  - (file)')
+            elif i.startswith(self.__baseName):
+                self.__listArea.insert(END, f'{i}  - (folder)')
+
+    def openRunFile(self, *args):
+        fileName = self.__listArea.get(ACTIVE)
+        if fileName.endswith('(file)'):
+            fileName = fileName[:-10]
+            if os.name == 'posix':
+                subprocess.call(("xdg-open", os.path.join(os.path.dirname(self.__filename.get()), fileName)))
+            elif os.name == 'nt':
+                os.startfile(fileName)
+        elif fileName.endswith('(folder)'):
+            fileName = fileName[:-12]
+            _baseName = os.path.basename(self.__filename.get())
+            for i in range(len(fileName) - len(_baseName)):
+                self.__fname.insert(END, fileName[len(_baseName) + i])
+            self.__fname.insert(END, '/')
+        self.__fname.focus_set()
 
 
 List = fileList()
