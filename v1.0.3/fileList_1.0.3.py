@@ -16,7 +16,7 @@ class fileList:
 
     def __init__(self):
         self.__root.title("FileList")
-        self.__root.geometry("500x500")
+        self.__root.geometry("550x550")
         self.__root.minsize(500, 500)
         self.__root.grid_rowconfigure(0, weight=1)
         self.__root.grid_columnconfigure(0, weight=1)

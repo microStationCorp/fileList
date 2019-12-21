@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="test branch">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/root.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/root.xml" afterDir="false" />
+    <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576864844239</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="now you can use double click and enter button for run and open a folder&#10;no button in this Version">
+      <created>1576937871655</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1576937871655</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,7 +339,8 @@
     <MESSAGE value="minor bug fixes" />
     <MESSAGE value="now can run a file" />
     <MESSAGE value="test branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="test branch" />
+    <MESSAGE value="now you can use double click and enter button for run and open a folder&#10;no button in this Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="now you can use double click and enter button for run and open a folder&#10;no button in this Version" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -345,10 +351,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576864861232">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576937871095">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576864861232" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576937871095" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576933734551">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -397,10 +403,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1576866264247" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576864915555">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576937882295">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576864915555" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576937882295" />
     <state x="455" y="316" width="445" height="156" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576057360739">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -413,6 +419,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="218" y="108" width="517" height="570" key="git4idea.branch.GitSmartOperationDialog/0.24.1366.744@0.24.1366.744" timestamp="1576866928603" />
+    <state x="246" y="187" width="460" height="413" key="git4idea.merge.GitMergeDialog" timestamp="1576938065012">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="246" y="187" width="460" height="413" key="git4idea.merge.GitMergeDialog/0.24.1366.744@0.24.1366.744" timestamp="1576938065012" />
     <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1576866032289">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
