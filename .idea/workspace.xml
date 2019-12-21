@@ -19,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="branch1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -307,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576937871655</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="branch1 1st comit">
+      <created>1576947538514</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1576947538514</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,7 +347,8 @@
     <MESSAGE value="now can run a file" />
     <MESSAGE value="test branch" />
     <MESSAGE value="now you can use double click and enter button for run and open a folder&#10;no button in this Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="now you can use double click and enter button for run and open a folder&#10;no button in this Version" />
+    <MESSAGE value="branch1 1st comit" />
+    <option name="LAST_COMMIT_MESSAGE" value="branch1 1st comit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -351,10 +359,14 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576937871095">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576947538225">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576937871095" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576947538225" />
+    <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="100" y="124" width="763" height="543" key="DiffContextDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947620593" />
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1576933734551">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -391,10 +403,14 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state width="861" height="220" key="GridCell.Tab.1.right/0.24.1366.744@0.24.1366.744" timestamp="1576672889589" />
-    <state x="186" y="112" width="580" height="562" key="MultipleFileMergeDialog" timestamp="1576866934160">
+    <state x="0" y="81" width="1092" height="621" key="MergeDialog" timestamp="1576947762614">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="186" y="112" width="580" height="562" key="MultipleFileMergeDialog/0.24.1366.744@0.24.1366.744" timestamp="1576866934160" />
+    <state x="0" y="81" width="1092" height="621" key="MergeDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947762614" />
+    <state x="186" y="112" width="580" height="562" key="MultipleFileMergeDialog" timestamp="1576947762616">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="186" y="112" width="580" height="562" key="MultipleFileMergeDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947762616" />
     <state x="0" y="242" width="924" height="296" key="Performance.Activity.Monitor" timestamp="1576491009523">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -403,10 +419,14 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1576866264247" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576937882295">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576947808885">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576937882295" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576947808885" />
+    <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1576947620593">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947620593" />
     <state x="455" y="316" width="445" height="156" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576057360739">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -415,14 +435,14 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="635" y="24" width="722" height="739" key="dock-window-1/0.24.1366.744@0.24.1366.744" timestamp="1576482799342" />
-    <state x="218" y="108" width="517" height="570" key="git4idea.branch.GitSmartOperationDialog" timestamp="1576866928603">
+    <state x="218" y="108" width="517" height="570" key="git4idea.branch.GitSmartOperationDialog" timestamp="1576947756989">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="218" y="108" width="517" height="570" key="git4idea.branch.GitSmartOperationDialog/0.24.1366.744@0.24.1366.744" timestamp="1576866928603" />
-    <state x="246" y="187" width="460" height="413" key="git4idea.merge.GitMergeDialog" timestamp="1576938065012">
+    <state x="218" y="108" width="517" height="570" key="git4idea.branch.GitSmartOperationDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947756989" />
+    <state x="246" y="187" width="470" height="413" key="git4idea.merge.GitMergeDialog" timestamp="1576947729829">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="246" y="187" width="460" height="413" key="git4idea.merge.GitMergeDialog/0.24.1366.744@0.24.1366.744" timestamp="1576938065012" />
+    <state x="246" y="187" width="470" height="413" key="git4idea.merge.GitMergeDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947729829" />
     <state x="112" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1576866032289">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
