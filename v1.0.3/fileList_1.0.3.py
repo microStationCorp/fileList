@@ -18,12 +18,14 @@ class fileList:
 
     def __init__(self):
         self.__root.title("FileList")
-        self.__root.geometry("500x500")
+        x, y = self.sizeOfWindow(self.__root.winfo_screenwidth(), self.__root.winfo_screenheight(), 500, 500)
+        self.__root.geometry(f"500x500+{x}+{y}")
         self.__root.minsize(500, 500)
         self.__root.grid_rowconfigure(0, weight=1)
         self.__root.grid_columnconfigure(0, weight=1)
         self.__root.bind('<Control-n>', self.newFile)
         self.__root.bind('<Control-Shift-N>', self.newDir)
+        self.__root.bind('<Control-h>', self.shortcutDialog)
         self.__filename.trace('w', self.searchFile)
         self.__listArea.grid(sticky=N + E + S + W, padx=10)
         self.__listArea.insert(0, ' please type something')
@@ -101,9 +103,10 @@ class fileList:
         self.__fname.focus_set()
 
     def dialogBox(self, title, cmd):
+        x, y = self.sizeOfWindow(self.__root.winfo_screenwidth(), self.__root.winfo_screenheight(), 300, 70)
         self._rootTop = Toplevel()
         self._rootTop.title(title)
-        self._rootTop.geometry('300x70')
+        self._rootTop.geometry(f'300x70+{x}+{y}')
         self._rootTop.resizable(0, 0)
         _bFrame = Frame(self._rootTop)
         _bFrame.pack(side=BOTTOM)
@@ -149,6 +152,40 @@ class fileList:
             self._rootTop.destroy()
         else:
             showinfo('info', 'invalid name')
+
+    def shortcutDialog(self, *args):
+        text = '''1. create new file : 
+    ctrl + N
+
+2. create new Folder : 
+    ctrl + shift + N
+
+3. help : 
+    ctrl + H'''
+
+        x, y = self.sizeOfWindow(self.__root.winfo_screenwidth(), self.__root.winfo_screenheight(), 300, 370)
+        _shortCutTop = Tk()
+        _shortCutTop.title('shortcuts')
+        _shortCutTop.geometry(f'300x370+{x}+{y}')
+        _shortCutTop.resizable(0, 0)
+        _header = Frame(_shortCutTop, bg="#CCC")
+        _header.pack(side=TOP, fill=X)
+        _hLabel = Label(_header, bg="#CCC", text='Shortcuts :', font='monaco 14')
+        _hLabel.pack(anchor='w')
+        _content = Frame(_shortCutTop)
+        _content.pack(side=TOP, fill=X, padx=10, pady=5)
+        _cLabel = Label(_content, text=text, font='monaco', justify=LEFT)
+        _cLabel.pack(anchor='nw')
+        _statusBar = Frame(_shortCutTop, bg="#CCC")
+        _statusBar.pack(side=BOTTOM, fill=X)
+        _stLabel = Label(_statusBar, bg="#CCC", text='Created by Sherlock...', font='hack 7')
+        _stLabel.pack(anchor='s')
+
+    def sizeOfWindow(self, rootWindowWidth, rootWindowHight, childWindowWidth, childWindowHight):
+        x = (rootWindowWidth / 2) - (childWindowWidth / 2)
+        y = (rootWindowHight / 2) - (childWindowHight / 2)
+        print(x, y)
+        return round(x), round(y)
 
 
 List = fileList()
