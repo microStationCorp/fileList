@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 from tkinter import *
 from tkinter.messagebox import *
 
@@ -13,6 +14,7 @@ class fileList:
     __thisScrollBarBottom = Scrollbar(__listArea)
     __dirName = ''
     __baseName = ''
+    __topEntry = StringVar()
 
     def __init__(self):
         self.__root.title("FileList")
@@ -20,6 +22,8 @@ class fileList:
         self.__root.minsize(500, 500)
         self.__root.grid_rowconfigure(0, weight=1)
         self.__root.grid_columnconfigure(0, weight=1)
+        self.__root.bind('<Control-n>', self.newFile)
+        self.__root.bind('<Control-Shift-N>', self.newDir)
         self.__filename.trace('w', self.searchFile)
         self.__listArea.grid(sticky=N + E + S + W, padx=10)
         self.__listArea.insert(0, ' please type something')
@@ -87,7 +91,7 @@ class fileList:
             if os.name == 'posix':
                 subprocess.call(("xdg-open", os.path.join(os.path.dirname(self.__filename.get()), fileName)))
             elif os.name == 'nt':
-                os.startfile(os.path.dirname(self.__filename.get()), fileName)
+                os.startfile(os.path.join(os.path.dirname(self.__filename.get()), fileName))
         elif fileName.endswith('(folder)'):
             fileName = fileName[:-12]
             _baseName = os.path.basename(self.__filename.get())
@@ -95,6 +99,56 @@ class fileList:
                 self.__fname.insert(END, fileName[len(_baseName) + i])
             self.__fname.insert(END, '/')
         self.__fname.focus_set()
+
+    def dialogBox(self, title, cmd):
+        self._rootTop = Toplevel()
+        self._rootTop.title(title)
+        self._rootTop.geometry('300x70')
+        self._rootTop.resizable(0, 0)
+        _bFrame = Frame(self._rootTop)
+        _bFrame.pack(side=BOTTOM)
+        _entryTop = Entry(self._rootTop, textvariable=self.__topEntry, width=30)
+        _entryTop.pack(side=TOP, pady=4)
+        _entryTop.bind('<Return>', cmd)
+        _entryTop.focus_set()
+        _buttonTopCancel = Button(_bFrame, text="cancel", command=self._rootTop.destroy)
+        _buttonTopCancel.pack(side=RIGHT, pady=4)
+        _buttonTopCreate = Button(_bFrame, text="create", command=cmd)
+        _buttonTopCreate.pack(side=RIGHT, pady=4)
+
+    def newDir(self, *args):
+        if self.__filename.get() != '':
+            self.dialogBox('new folder dialog', self.createDir)
+        else:
+            showinfo('info', 'invalid Path')
+
+    def newFile(self, *args):
+        if self.__filename.get() != '':
+            self.dialogBox('new file dialog', self.createFile)
+        else:
+            showinfo('info', 'invalid Path')
+
+    def createFile(self, *args):
+        fileName = self.__topEntry.get()
+        name, extension = os.path.splitext(fileName)
+        if name != '' and extension != '':
+            f = open(os.path.join(os.path.dirname(self.__filename.get()), fileName), 'w+')
+            f.close()
+            showinfo('info', f'{fileName} has created')
+            self.printList()
+            self._rootTop.destroy()
+        else:
+            showinfo('info', 'invalid name')
+
+    def createDir(self, *args):
+        if self.__topEntry.get() != '':
+            fileName = self.__topEntry.get()
+            os.mkdir(os.path.join(os.path.dirname(self.__filename.get()), fileName))
+            showinfo('info', f'{fileName} has created')
+            self.printList()
+            self._rootTop.destroy()
+        else:
+            showinfo('info', 'invalid name')
 
 
 List = fileList()
