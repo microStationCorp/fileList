@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tut1.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="Python.test">
@@ -314,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576947538514</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="final commit">
+      <created>1576947845829</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1576947845829</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,7 +353,8 @@
     <MESSAGE value="test branch" />
     <MESSAGE value="now you can use double click and enter button for run and open a folder&#10;no button in this Version" />
     <MESSAGE value="branch1 1st comit" />
-    <option name="LAST_COMMIT_MESSAGE" value="branch1 1st comit" />
+    <MESSAGE value="final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="final commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -359,10 +365,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576947538225">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1576947845692">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576947538225" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1576947845692" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -371,22 +377,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1576933734551" />
-    <state width="401" height="688" key="GridCell.Tab.0.bottom" timestamp="1576937724592">
+    <state width="940" height="128" key="GridCell.Tab.0.bottom" timestamp="1576947899606">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576937724592" />
-    <state width="401" height="688" key="GridCell.Tab.0.center" timestamp="1576937724592">
+    <state width="940" height="128" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1576947899606" />
+    <state width="940" height="128" key="GridCell.Tab.0.center" timestamp="1576947899596">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576937724592" />
-    <state width="401" height="688" key="GridCell.Tab.0.left" timestamp="1576937724592">
+    <state width="940" height="128" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1576947899596" />
+    <state width="940" height="128" key="GridCell.Tab.0.left" timestamp="1576947899593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576937724592" />
-    <state width="401" height="688" key="GridCell.Tab.0.right" timestamp="1576937724592">
+    <state width="940" height="128" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1576947899593" />
+    <state width="940" height="128" key="GridCell.Tab.0.right" timestamp="1576947899606">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="401" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576937724592" />
+    <state width="940" height="128" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1576947899606" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -419,10 +425,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1576866264247" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576947808885">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1576947851814">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576947808885" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1576947851814" />
     <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

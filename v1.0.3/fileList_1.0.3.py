@@ -87,7 +87,7 @@ class fileList:
             if os.name == 'posix':
                 subprocess.call(("xdg-open", os.path.join(os.path.dirname(self.__filename.get()), fileName)))
             elif os.name == 'nt':
-                os.startfile(fileName)
+                os.startfile(os.path.dirname(self.__filename.get()), fileName)
         elif fileName.endswith('(folder)'):
             fileName = fileName[:-12]
             _baseName = os.path.basename(self.__filename.get())
