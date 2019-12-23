@@ -184,7 +184,6 @@ class fileList:
     def sizeOfWindow(self, rootWindowWidth, rootWindowHight, childWindowWidth, childWindowHight):
         x = (rootWindowWidth / 2) - (childWindowWidth / 2)
         y = (rootWindowHight / 2) - (childWindowHight / 2)
-        print(x, y)
         return round(x), round(y)
 
 
