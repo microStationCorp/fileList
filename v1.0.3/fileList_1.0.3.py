@@ -3,6 +3,7 @@ import subprocess
 import sys
 from tkinter import *
 from tkinter.messagebox import *
+import re
 
 
 class fileList:
@@ -134,7 +135,7 @@ class fileList:
     def createFile(self, *args):
         fileName = self.__topEntry.get()
         name, extension = os.path.splitext(fileName)
-        if name != '' and extension != '':
+        if name != '' and extension != '' and self.validateName(name,'file'==True):
             f = open(os.path.join(os.path.dirname(self.__filename.get()), fileName), 'w+')
             f.close()
             showinfo('info', f'{fileName} has created')
@@ -144,7 +145,7 @@ class fileList:
             showinfo('info', 'invalid name')
 
     def createDir(self, *args):
-        if self.__topEntry.get() != '':
+        if self.__topEntry.get() != '' and self.validateName(self.__topEntry.get(),'folder')==True:
             fileName = self.__topEntry.get()
             os.mkdir(os.path.join(os.path.dirname(self.__filename.get()), fileName))
             showinfo('info', f'{fileName} has created')
@@ -186,6 +187,17 @@ class fileList:
         y = (rootWindowHight / 2) - (childWindowHight / 2)
         return round(x), round(y)
 
+    def validateName(self,name,ftype):
+        fileReg=re.compile('[~`$%^&*{}:;"\'\\,<.>?/\[\]]')
+        folderReg=re.compile('[~`$%^&*{}:;"\'\\,<>?/\[\]]')
+        if ftype=='file' and fileReg.search(name)==None:
+            return True
+        elif ftype=='folder' and folderReg.search(name)==None:
+            return True
+        else:
+            return False
+            
+        
 
 List = fileList()
 List.run()
