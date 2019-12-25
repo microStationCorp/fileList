@@ -107,7 +107,8 @@ class fileList:
             newAddress = os.path.dirname(os.path.dirname(self.__filename.get()))
             for i in range(len(self.__filename.get()) - len(newAddress)):
                 self.__fname.delete(len(self.__filename.get()) - 1)
-            self.__fname.insert(END, os.sep)
+            if newAddress != os.sep:
+                self.__fname.insert(END, os.sep)
         elif fileName.endswith('(file)'):
             fileName = fileName[:-10]
             if os.name == 'posix':
