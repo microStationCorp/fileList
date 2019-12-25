@@ -65,23 +65,19 @@ class fileList:
         self.__root.mainloop()
 
     def searchFile(self, *args):
-        if self.__filename.get().endswith('/') and os.path.isfile(os.path.abspath(self.__filename.get())):
+        if self.__filename.get().endswith(os.sep) and os.path.isfile(os.path.abspath(self.__filename.get())):
             showinfo('info', 'it is a file')
             self.__fname.delete(len(self.__filename.get()) - 1)
             self.printList()
-        elif self.__filename.get().endswith('/') and os.path.exists(self.__filename.get()):
+        elif self.__filename.get().endswith(os.sep) and os.path.exists(self.__filename.get()):
             self.printList()
-            if self.__listArea.size() == 0:
-                showinfo('info', 'empty')
-                self.__fname.delete(len(self.__filename.get()) - 1)
-                self.printList()
-        elif not self.__filename.get().endswith('/') and os.path.exists(os.path.dirname(self.__filename.get())):
+        elif not self.__filename.get().endswith(os.sep) and os.path.exists(os.path.dirname(self.__filename.get())):
             self.printList()
             if self.__listArea.size() == 0:
                 showinfo('info', 'not found')
                 self.__fname.delete(len(self.__filename.get()) - 1)
                 self.printList()
-        elif self.__filename.get().endswith('/') and not os.path.exists(os.path.dirname(self.__filename.get())):
+        elif self.__filename.get().endswith(os.sep) and not os.path.exists(os.path.dirname(self.__filename.get())):
             showinfo('info', 'invalid')
             self.__fname.delete(len(self.__filename.get()) - 1)
             self.printList()
@@ -91,9 +87,14 @@ class fileList:
 
     def printList(self):
         self.__dirName, self.__baseName = os.path.split(self.__filename.get())
-        __list = os.listdir(self.__dirName)
+        try:
+            __list = os.listdir(self.__dirName)
+        except:
+            return
         self.__listArea.delete(0, END)
         self.__root.title(f"{self.__dirName} - FileList")
+        __list.sort()
+        self.__listArea.insert(END, f'{os.pardir}Parent Folder')
         for i in __list:
             if i.startswith(self.__baseName) and os.path.isfile(os.path.join(self.__dirName, i)):
                 self.__listArea.insert(END, f'{i}  - (file)')
@@ -102,7 +103,12 @@ class fileList:
 
     def openRunFile(self, *args):
         fileName = self.__listArea.get(ACTIVE)
-        if fileName.endswith('(file)'):
+        if fileName.startswith(os.pardir):
+            newAddress = os.path.dirname(os.path.dirname(self.__filename.get()))
+            for i in range(len(self.__filename.get()) - len(newAddress)):
+                self.__fname.delete(len(self.__filename.get()) - 1)
+            self.__fname.insert(END, os.sep)
+        elif fileName.endswith('(file)'):
             fileName = fileName[:-10]
             if os.name == 'posix':
                 subprocess.call(("xdg-open", os.path.join(os.path.dirname(self.__filename.get()), fileName)))
@@ -113,7 +119,7 @@ class fileList:
             _baseName = os.path.basename(self.__filename.get())
             for i in range(len(fileName) - len(_baseName)):
                 self.__fname.insert(END, fileName[len(_baseName) + i])
-            self.__fname.insert(END, '/')
+            self.__fname.insert(END, os.sep)
         self.__fname.focus_set()
 
     def dialogBox(self, title, cmd):
