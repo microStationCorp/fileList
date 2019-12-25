@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577217019744</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="bug fixes&#10;back button added">
+      <created>1577263497214</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1577263497214</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,7 +410,8 @@
     <MESSAGE value="window position and new shortcut window added" />
     <MESSAGE value="validation added" />
     <MESSAGE value="deletion process added by pressing ctrl + d" />
-    <option name="LAST_COMMIT_MESSAGE" value="deletion process added by pressing ctrl + d" />
+    <MESSAGE value="bug fixes&#10;back button added" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes&#10;back button added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -415,10 +422,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577217019547">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577263496510">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577217019547" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577263496510" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -427,22 +434,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1577080661843" />
-    <state width="356" height="688" key="GridCell.Tab.0.bottom" timestamp="1577263364396">
+    <state width="356" height="688" key="GridCell.Tab.0.bottom" timestamp="1577264410391">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577263364396" />
-    <state width="356" height="688" key="GridCell.Tab.0.center" timestamp="1577263364395">
+    <state width="356" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577264410391" />
+    <state width="356" height="688" key="GridCell.Tab.0.center" timestamp="1577264410391">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577263364395" />
-    <state width="356" height="688" key="GridCell.Tab.0.left" timestamp="1577263364395">
+    <state width="356" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577264410391" />
+    <state width="356" height="688" key="GridCell.Tab.0.left" timestamp="1577264410390">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577263364395" />
-    <state width="356" height="688" key="GridCell.Tab.0.right" timestamp="1577263364395">
+    <state width="356" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577264410390" />
+    <state width="356" height="688" key="GridCell.Tab.0.right" timestamp="1577264410391">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577263364395" />
+    <state width="356" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577264410391" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -475,10 +482,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1577080458317" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577217027057">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577263613825">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577217027057" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577263613825" />
     <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
