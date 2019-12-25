@@ -39,10 +39,31 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pythonF/myModule.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../teditor/teditor.py" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.fileList_1.0.3">
+    <configuration name="dialog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="filelist" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="/usr/lib/python3.7/tkinter" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="/usr/lib/python3.7/tkinter/dialog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="fileList_1.0.3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,34 +148,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tut1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="filelist" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../tut1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.myModule" />
+        <item itemvalue="Python.dialog" />
         <item itemvalue="Python.filedialog" />
-        <item itemvalue="Python.fileList_1.0.3" />
-        <item itemvalue="Python.tut1" />
       </list>
     </recent_temporary>
   </component>
@@ -370,7 +370,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577263497214</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="small bug fixes related to '/'">
+      <created>1577264464794</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1577264464794</updated>
+    </task>
+    <task id="LOCAL-00029" summary="small bug fixes related to '/'">
+      <created>1577264487327</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1577264487327</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,7 +425,8 @@
     <MESSAGE value="validation added" />
     <MESSAGE value="deletion process added by pressing ctrl + d" />
     <MESSAGE value="bug fixes&#10;back button added" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes&#10;back button added" />
+    <MESSAGE value="small bug fixes related to '/'" />
+    <option name="LAST_COMMIT_MESSAGE" value="small bug fixes related to '/'" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -422,34 +437,34 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577264464511">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577264487141">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577264464511" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577264487141" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947620593" />
-    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1577080661843">
+    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl" timestamp="1577287239382">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1577080661843" />
-    <state width="356" height="688" key="GridCell.Tab.0.bottom" timestamp="1577264410391">
+    <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1577287239382" />
+    <state width="356" height="688" key="GridCell.Tab.0.bottom" timestamp="1577294630430">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577264410391" />
-    <state width="356" height="688" key="GridCell.Tab.0.center" timestamp="1577264410391">
+    <state width="356" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577294630430" />
+    <state width="356" height="688" key="GridCell.Tab.0.center" timestamp="1577294630428">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577264410391" />
-    <state width="356" height="688" key="GridCell.Tab.0.left" timestamp="1577264410390">
+    <state width="356" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577294630428" />
+    <state width="356" height="688" key="GridCell.Tab.0.left" timestamp="1577294630427">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577264410390" />
-    <state width="356" height="688" key="GridCell.Tab.0.right" timestamp="1577264410391">
+    <state width="356" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577294630427" />
+    <state width="356" height="688" key="GridCell.Tab.0.right" timestamp="1577294630429">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577264410391" />
+    <state width="356" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577294630429" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -482,10 +497,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="0" y="31" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1577080458317" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577263613825">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577264505357">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577263613825" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577264505357" />
     <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

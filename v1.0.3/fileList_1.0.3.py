@@ -21,10 +21,11 @@ def validateName(name, ftype):
 class fileList:
     __root = Tk()
     __filename = StringVar()
-    __thisControlFrame = Frame(__root, borderwidth=2, relief=SUNKEN, pady=5, bg="#AAA")
-    __listArea = Listbox(__root, selectmode=EXTENDED)
-    __thisScrollBarSide = Scrollbar(__listArea)
-    __thisScrollBarBottom = Scrollbar(__listArea)
+    __outPutFrame = Frame(__root)
+    __menuBar = Menu(__root)
+    __scrollBarRight = Scrollbar(__outPutFrame)
+    __scrollBarBottom = Scrollbar(__outPutFrame, orient=HORIZONTAL)
+    __controlFrame = Frame(__root, bd=2, relief=SUNKEN, pady=8)
     __dirName = ''
     __baseName = ''
     __topEntry = StringVar()
@@ -34,35 +35,77 @@ class fileList:
         x, y = self.sizeOfWindow(500, 500)
         self.__root.geometry(f"500x500+{x}+{y}")
         self.__root.minsize(500, 500)
-        self.__root.grid_rowconfigure(0, weight=1)
-        self.__root.grid_columnconfigure(0, weight=1)
+
+        self.__root.config(menu=self.__menuBar)
+        self.__applicationMenu = Menu(self.__menuBar, tearoff=0)
+        self.__applicationMenu.add_command(label="Help", command=self.shortcutDialog)
+        self.__applicationMenu.add_command(label='About App', command=self.aboutApp)
+        self.__applicationMenu.add_command(label='About Dev', command=self.aboutDev)
+        self.__applicationMenu.add_command(label="Exit", command=self.quit)
+        self.__menuBar.add_cascade(label="FileList", menu=self.__applicationMenu, font='consolas 10 bold')
+
+        self.__actionMenu = Menu(self.__menuBar, tearoff=0)
+        self.__actionMenu.add_command(label='New file', command=self.newFile)
+        self.__actionMenu.add_command(label='New folder', command=self.newDir)
+        self.__actionMenu.add_command(label='delete', command=self.deleteContentSelected)
+        self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu)
+
         self.__root.bind('<Control-n>', self.newFile)
         self.__root.bind('<Control-Shift-N>', self.newDir)
         self.__root.bind('<Control-h>', self.shortcutDialog)
         self.__root.bind('<Control-d>', self.deleteContentSelected)
         self.__filename.trace('w', self.searchFile)
-        self.__listArea.grid(sticky=N + E + S + W, padx=10)
-        self.__listArea.insert(0, ' please type something')
-        self.__thisScrollBarSide.pack(side=RIGHT, fill=Y)
-        self.__thisScrollBarSide.config(command=self.__listArea.yview)
-        self.__listArea.config(yscrollcommand=self.__thisScrollBarSide.set)
-        self.__thisScrollBarBottom.pack(side=BOTTOM, fill=X)
-        self.__thisScrollBarBottom.config(command=self.__listArea.xview, orient=HORIZONTAL)
-        self.__listArea.config(xscrollcommand=self.__thisScrollBarBottom.set)
-        self.__thisControlFrame.grid(sticky=N + E + S + W, row=1, column=0, padx=10, pady=10)
+
+        self.__outPutFrame.pack(fill=BOTH, expand=True, padx=10, pady=4)
+        self.__scrollBarRight.pack(side=RIGHT, fill=Y)
+        self.__listArea = Listbox(self.__outPutFrame)
+        self.__listArea.pack(expand=True, fill=BOTH)
+        self.__scrollBarBottom.pack(side=BOTTOM, fill=X)
+        self.__scrollBarRight.config(command=self.__listArea.yview)
+        self.__listArea.config(yscrollcommand=self.__scrollBarRight.set)
+        self.__scrollBarBottom.config(command=self.__listArea.xview)
+        self.__listArea.config(xscrollcommand=self.__scrollBarBottom.set)
         self.__listArea.config(font='monaco 11')
         self.__listArea.bind('<Return>', self.openRunFile)
         self.__listArea.bind('<Double-Button-1>', self.openRunFile)
 
-        self.__thisControlFrame.grid_columnconfigure(0, weight=1)
-        self.__thisControlFrame.grid_rowconfigure(0, weight=1)
-        Label(self.__thisControlFrame, text="Enter path Address :", bg="#AAA", font="monaco 12 bold").grid(pady=5)
-        self.__fname = Entry(self.__thisControlFrame, textvariable=self.__filename, font='monaco')
-        self.__fname.grid(sticky=E + W + N + S, padx=30, row=1, column=0)
+        self.__controlFrame.pack(fill=BOTH, padx=10, pady=8)
+        Label(self.__controlFrame, text="Enter path:", font="monaco 10 bold").pack()
+        self.__fname = Entry(self.__controlFrame, textvariable=self.__filename, font='monaco', width=40)
+        self.__fname.pack()
         self.__fname.focus_set()
+
+    def aboutApp(self):
+        __app = Toplevel()
+        __app.title('About Application')
+        x, y = self.sizeOfWindow(300, 200)
+        __app.geometry(f'300x200+{x}+{y}')
+        __app.resizable(0, 0)
+        __app.grab_set()
+        __head = Label(__app, text='FileList', font='Hack 14 bold', pady=20)
+        __head.pack()
+        text = 'version : 1.0.0\nFileList is simple file manager.\nIt is written in python.\n'
+        __content = Label(__app, text=text, font='monaco 8')
+        __content.pack(side=TOP)
+
+    def aboutDev(self):
+        __app = Toplevel()
+        __app.title('About Developer')
+        x, y = self.sizeOfWindow(300, 200)
+        __app.geometry(f'300x200+{x}+{y}')
+        __app.resizable(0, 0)
+        __app.grab_set()
+        __head = Label(__app, text='Sujan Mondal', font='Hack 14 bold', pady=20)
+        __head.pack()
+        text = 'diploma in Electrical Engineering\nCEO of MicroStation Corp\nProgrammer by passion'
+        __content = Label(__app, text=text, font='monaco 8')
+        __content.pack(side=TOP)
 
     def run(self):
         self.__root.mainloop()
+
+    def quit(self):
+        self.__root.destroy()
 
     def searchFile(self, *args):
         if self.__filename.get().endswith(os.sep) and os.path.isfile(os.path.abspath(self.__filename.get())):
@@ -73,7 +116,7 @@ class fileList:
             self.printList()
         elif not self.__filename.get().endswith(os.sep) and os.path.exists(os.path.dirname(self.__filename.get())):
             self.printList()
-            if self.__listArea.size() == 0:
+            if self.__listArea.size() == 1:
                 showinfo('info', 'not found')
                 self.__fname.delete(len(self.__filename.get()) - 1)
                 self.printList()
@@ -127,6 +170,7 @@ class fileList:
         x, y = self.sizeOfWindow(300, 70)
         self._rootTop = Toplevel()
         self._rootTop.title(title)
+        self._rootTop.grab_set()
         self._rootTop.geometry(f'300x70+{x}+{y}')
         self._rootTop.resizable(0, 0)
         _bFrame = Frame(self._rootTop)
@@ -158,6 +202,7 @@ class fileList:
         if name != '' and extension != '' and validateName(name, 'file'):
             f = open(os.path.join(os.path.dirname(self.__filename.get()), fileName), 'w+')
             f.close()
+            self._rootTop.grab_release()
             showinfo('info', f'{fileName} has created')
             self.printList()
             self._rootTop.destroy()
@@ -168,6 +213,7 @@ class fileList:
         if self.__topEntry.get() != '' and validateName(self.__topEntry.get(), 'folder') == True:
             fileName = self.__topEntry.get()
             os.mkdir(os.path.join(os.path.dirname(self.__filename.get()), fileName))
+            self._rootTop.grab_release()
             showinfo('info', f'{fileName} has created')
             self.printList()
             self._rootTop.destroy()
@@ -185,24 +231,28 @@ class fileList:
     ctrl + H
 
 4. delete :
-    ctrl + D'''
+    ctrl + D
+
+5. Exit :
+    ctrl +q'''
 
         x, y = self.sizeOfWindow(300, 370)
-        _shortCutTop = Tk()
-        _shortCutTop.title('shortcuts')
-        _shortCutTop.geometry(f'300x370+{x}+{y}')
-        _shortCutTop.resizable(0, 0)
-        _header = Frame(_shortCutTop, bg="#CCC")
+        self._shortCutTop = Toplevel()
+        self._shortCutTop.title('shortcuts')
+        self._shortCutTop.geometry(f'300x370+{x}+{y}')
+        self._shortCutTop.resizable(0, 0)
+        self._shortCutTop.grab_set()
+        _header = Frame(self._shortCutTop, bg="#CCC")
         _header.pack(side=TOP, fill=X)
         _hLabel = Label(_header, bg="#CCC", text='Shortcuts :', font='monaco 14')
         _hLabel.pack(anchor='w')
-        _content = Frame(_shortCutTop)
+        _content = Frame(self._shortCutTop)
         _content.pack(side=TOP, fill=X, padx=10, pady=5)
         _cLabel = Label(_content, text=text, font='consolas 10', justify=LEFT)
         _cLabel.pack(anchor='nw')
-        _statusBar = Frame(_shortCutTop, bg="#CCC")
+        _statusBar = Frame(self._shortCutTop, bg="#CCC")
         _statusBar.pack(side=BOTTOM, fill=X)
-        _stLabel = Label(_statusBar, bg="#CCC", text='Created by Sherlock...', font='hack 7')
+        _stLabel = Label(_statusBar, bg="#CCC", text='Created by Sujan Mondal...', font='hack 7')
         _stLabel.pack(anchor='s')
 
     def sizeOfWindow(self, childWindowWidth, childWindowHight):
