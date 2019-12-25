@@ -42,7 +42,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../teditor/teditor.py" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunManager" selected="Python.fileList_1.0.3">
+  <component name="RunManager" selected="Python.test">
     <configuration name="dialog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,8 +150,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.myModule" />
         <item itemvalue="Python.dialog" />
         <item itemvalue="Python.filedialog" />
@@ -384,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577264487327</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="commit bug fixes and menubar added">
+      <created>1577294658645</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1577294658645</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -426,7 +433,8 @@
     <MESSAGE value="deletion process added by pressing ctrl + d" />
     <MESSAGE value="bug fixes&#10;back button added" />
     <MESSAGE value="small bug fixes related to '/'" />
-    <option name="LAST_COMMIT_MESSAGE" value="small bug fixes related to '/'" />
+    <MESSAGE value="commit bug fixes and menubar added" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit bug fixes and menubar added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -437,10 +445,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="48" y="57" width="800" height="673" key="#Inspections/0.24.1366.744@0.24.1366.744" timestamp="1576596257236" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577264487141">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577294658014">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577264487141" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577294658014" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -449,22 +457,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1577287239382" />
-    <state width="356" height="688" key="GridCell.Tab.0.bottom" timestamp="1577294630430">
+    <state width="356" height="688" key="GridCell.Tab.0.bottom" timestamp="1577295020643">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577294630430" />
-    <state width="356" height="688" key="GridCell.Tab.0.center" timestamp="1577294630428">
+    <state width="356" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577295020643" />
+    <state width="356" height="688" key="GridCell.Tab.0.center" timestamp="1577295020643">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577294630428" />
-    <state width="356" height="688" key="GridCell.Tab.0.left" timestamp="1577294630427">
+    <state width="356" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577295020643" />
+    <state width="356" height="688" key="GridCell.Tab.0.left" timestamp="1577295020643">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577294630427" />
-    <state width="356" height="688" key="GridCell.Tab.0.right" timestamp="1577294630429">
+    <state width="356" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577295020643" />
+    <state width="356" height="688" key="GridCell.Tab.0.right" timestamp="1577295020643">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="356" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577294630429" />
+    <state width="356" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577295020643" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

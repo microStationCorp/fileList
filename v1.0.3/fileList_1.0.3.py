@@ -38,16 +38,16 @@ class fileList:
 
         self.__root.config(menu=self.__menuBar)
         self.__applicationMenu = Menu(self.__menuBar, tearoff=0)
-        self.__applicationMenu.add_command(label="Help", command=self.shortcutDialog)
+        self.__applicationMenu.add_command(label="Help", command=self.shortcutDialog, accelerator='Ctrl+H')
         self.__applicationMenu.add_command(label='About App', command=self.aboutApp)
         self.__applicationMenu.add_command(label='About Dev', command=self.aboutDev)
         self.__applicationMenu.add_command(label="Exit", command=self.quit)
         self.__menuBar.add_cascade(label="FileList", menu=self.__applicationMenu, font='consolas 10 bold')
 
         self.__actionMenu = Menu(self.__menuBar, tearoff=0)
-        self.__actionMenu.add_command(label='New file', command=self.newFile)
-        self.__actionMenu.add_command(label='New folder', command=self.newDir)
-        self.__actionMenu.add_command(label='delete', command=self.deleteContentSelected)
+        self.__actionMenu.add_command(label='New file', command=self.newFile, accelerator='Ctrl+N')
+        self.__actionMenu.add_command(label='New folder', command=self.newDir, accelerator='Ctrl+Shift+N')
+        self.__actionMenu.add_command(label='delete', command=self.deleteContentSelected, accelerator='Ctrl+D')
         self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu)
 
         self.__root.bind('<Control-n>', self.newFile)
