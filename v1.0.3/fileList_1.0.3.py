@@ -121,7 +121,7 @@ class fileList:
                 self.__fname.delete(len(self.__filename.get()) - 1)
                 self.printList()
         elif self.__filename.get().endswith(os.sep) and not os.path.exists(os.path.dirname(self.__filename.get())):
-            showinfo('info', 'invalid')
+            showinfo('info', 'invalid Action')
             self.__fname.delete(len(self.__filename.get()) - 1)
             self.printList()
         elif self.__filename.get() == '':
@@ -139,9 +139,9 @@ class fileList:
         __list.sort()
         self.__listArea.insert(END, f'{os.pardir}Parent Folder')
         for i in __list:
-            if i.startswith(self.__baseName) and os.path.isfile(os.path.join(self.__dirName, i)):
+            if i.find(self.__baseName) != -1 and os.path.isfile(os.path.join(self.__dirName, i)):
                 self.__listArea.insert(END, f'{i}  - (file)')
-            elif i.startswith(self.__baseName):
+            elif i.find(self.__baseName) != -1:
                 self.__listArea.insert(END, f'{i}  - (folder)')
 
     def openRunFile(self, *args):
@@ -160,10 +160,10 @@ class fileList:
                 os.startfile(os.path.join(os.path.dirname(self.__filename.get()), fileName))
         elif fileName.endswith('(folder)'):
             fileName = fileName[:-12]
-            _baseName = os.path.basename(self.__filename.get())
-            for i in range(len(fileName) - len(_baseName)):
-                self.__fname.insert(END, fileName[len(_baseName) + i])
-            self.__fname.insert(END, os.sep)
+            dirName = os.path.dirname(self.__filename.get())
+            newAddress = os.path.join(dirName, fileName)
+            self.__fname.delete(0, END)
+            self.__fname.insert(END, f"{newAddress}{os.sep}")
         self.__fname.focus_set()
 
     def dialogBox(self, title, cmd):
@@ -175,10 +175,10 @@ class fileList:
         self._rootTop.resizable(0, 0)
         _bFrame = Frame(self._rootTop)
         _bFrame.pack(side=BOTTOM)
-        _entryTop = Entry(self._rootTop, textvariable=self.__topEntry, width=30)
-        _entryTop.pack(side=TOP, pady=4)
-        _entryTop.bind('<Return>', cmd)
-        _entryTop.focus_set()
+        self._entryTop = Entry(self._rootTop, textvariable=self.__topEntry, width=30)
+        self._entryTop.pack(side=TOP, pady=4)
+        self._entryTop.bind('<Return>', cmd)
+        self._entryTop.focus_set()
         _buttonTopCancel = Button(_bFrame, text="cancel", command=self._rootTop.destroy)
         _buttonTopCancel.pack(side=RIGHT, pady=4)
         _buttonTopCreate = Button(_bFrame, text="create", command=cmd)
@@ -205,6 +205,7 @@ class fileList:
             self._rootTop.grab_release()
             showinfo('info', f'{fileName} has created')
             self.printList()
+            self._entryTop.delete(0, END)
             self._rootTop.destroy()
         else:
             showinfo('info', 'invalid name')
@@ -216,6 +217,7 @@ class fileList:
             self._rootTop.grab_release()
             showinfo('info', f'{fileName} has created')
             self.printList()
+            self._entryTop.delete(0, END)
             self._rootTop.destroy()
         else:
             showinfo('info', 'invalid name')
@@ -248,7 +250,7 @@ class fileList:
         _hLabel.pack(anchor='w')
         _content = Frame(self._shortCutTop)
         _content.pack(side=TOP, fill=X, padx=10, pady=5)
-        _cLabel = Label(_content, text=text, font='consolas 10', justify=LEFT)
+        _cLabel = Label(_content, text=text, font='Hack 9', justify=LEFT)
         _cLabel.pack(anchor='nw')
         _statusBar = Frame(self._shortCutTop, bg="#CCC")
         _statusBar.pack(side=BOTTOM, fill=X)
