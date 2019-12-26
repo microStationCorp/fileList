@@ -43,7 +43,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../teditor/teditor.py" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
-  <component name="RunManager" selected="Python.fileList_1.0.3">
+  <component name="RunManager" selected="Python.test">
     <configuration name="dialog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,9 +151,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.myModule" />
+        <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.dialog" />
         <item itemvalue="Python.filedialog" />
       </list>
@@ -399,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577295050459</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="search experience updated, now you can search with just a portion of your file or folder name">
+      <created>1577340871844</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1577340871844</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -417,7 +424,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="button and entry edited , it is not final" />
     <MESSAGE value="text area entry disabled" />
     <MESSAGE value="search ability upgraded , now you can search more efficiently , using the starting letters" />
     <MESSAGE value="new version added , which can search automatically , with a keypress" />
@@ -442,7 +448,8 @@
     <MESSAGE value="small bug fixes related to '/'" />
     <MESSAGE value="commit bug fixes and menubar added" />
     <MESSAGE value="small design changes&#10;shortcut keys" />
-    <option name="LAST_COMMIT_MESSAGE" value="small design changes&#10;shortcut keys" />
+    <MESSAGE value="search experience updated, now you can search with just a portion of your file or folder name" />
+    <option name="LAST_COMMIT_MESSAGE" value="search experience updated, now you can search with just a portion of your file or folder name" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -457,10 +464,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="173" y="24" width="641" height="740" key="#test/0.24.1366.744@0.24.1366.744" timestamp="1577339931256" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577295050343">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577340871515">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577295050343" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577340871515" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -469,22 +476,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="154" width="424" height="480" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1577287239382" />
-    <state width="366" height="688" key="GridCell.Tab.0.bottom" timestamp="1577340783414">
+    <state width="366" height="688" key="GridCell.Tab.0.bottom" timestamp="1577343914207">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="366" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577340783414" />
-    <state width="366" height="688" key="GridCell.Tab.0.center" timestamp="1577340783413">
+    <state width="366" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577343914207" />
+    <state width="366" height="688" key="GridCell.Tab.0.center" timestamp="1577343914207">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="366" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577340783413" />
-    <state width="366" height="688" key="GridCell.Tab.0.left" timestamp="1577340783413">
+    <state width="366" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577343914207" />
+    <state width="366" height="688" key="GridCell.Tab.0.left" timestamp="1577343914207">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="366" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577340783413" />
-    <state width="366" height="688" key="GridCell.Tab.0.right" timestamp="1577340783414">
+    <state width="366" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577343914207" />
+    <state width="366" height="688" key="GridCell.Tab.0.right" timestamp="1577343914207">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="366" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577340783414" />
+    <state width="366" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577343914207" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

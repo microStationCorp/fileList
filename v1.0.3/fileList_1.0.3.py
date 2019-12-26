@@ -74,6 +74,7 @@ class fileList:
         self.__fname = Entry(self.__controlFrame, textvariable=self.__filename, font='monaco', width=40)
         self.__fname.pack()
         self.__fname.focus_set()
+        self.__fname.bind('<Right>', self.rightArrowKey)
 
     def aboutApp(self):
         __app = Toplevel()
@@ -108,7 +109,9 @@ class fileList:
         self.__root.destroy()
 
     def searchFile(self, *args):
-        if self.__filename.get().endswith(os.sep) and os.path.isfile(os.path.abspath(self.__filename.get())):
+        if self.__filename.get().endswith(f'{os.sep}{os.sep}'):
+            self.__fname.delete(len(self.__filename.get()) - 1)
+        elif self.__filename.get().endswith(os.sep) and os.path.isfile(os.path.abspath(self.__filename.get())):
             showinfo('info', 'it is a file')
             self.__fname.delete(len(self.__filename.get()) - 1)
             self.printList()
@@ -143,6 +146,7 @@ class fileList:
                 self.__listArea.insert(END, f'{i}  - (file)')
             elif i.find(self.__baseName) != -1:
                 self.__listArea.insert(END, f'{i}  - (folder)')
+        self.__listArea.activate(1)
 
     def openRunFile(self, *args):
         fileName = self.__listArea.get(ACTIVE)
@@ -165,6 +169,15 @@ class fileList:
             self.__fname.delete(0, END)
             self.__fname.insert(END, f"{newAddress}{os.sep}")
         self.__fname.focus_set()
+
+    def rightArrowKey(self, *args):
+        if self.__listArea.get(1).endswith('(folder)'):
+            fileName = self.__listArea.get(ACTIVE)
+            fileName = fileName[:-12]
+            dirName = os.path.dirname(self.__filename.get())
+            newAddress = os.path.join(dirName, fileName)
+            self.__fname.delete(0, END)
+            self.__fname.insert(0, newAddress)
 
     def dialogBox(self, title, cmd):
         x, y = self.sizeOfWindow(300, 70)
