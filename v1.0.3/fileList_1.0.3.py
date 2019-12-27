@@ -320,7 +320,7 @@ class fileList:
 
 if __name__ == '__main__':
     try:
-        with open('extension.txt', 'r') as file:
+        with open('./extension.txt', 'r') as file:
             List = fileList()
             List.run()
     except:
