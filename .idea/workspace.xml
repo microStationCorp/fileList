@@ -44,6 +44,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../fileExt" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/v1.0.3" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.fileList_1.0.3">
     <configuration name="fileList_1.0.3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
@@ -441,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577446055645</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="bug fixes">
+      <created>1577446288006</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1577446288006</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,7 +471,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="new initiate for version 1.0.3&#10;target is gain code efficiency , better logic and future extinsible" />
     <MESSAGE value="minor bug fixes&#10;now can operate file name or folder name with space" />
     <MESSAGE value="minor bug fixes" />
     <MESSAGE value="now can run a file" />
@@ -484,7 +495,8 @@
     <MESSAGE value="extension.txt added" />
     <MESSAGE value="extension validation process added" />
     <MESSAGE value="some initial conditions added" />
-    <option name="LAST_COMMIT_MESSAGE" value="some initial conditions added" />
+    <MESSAGE value="bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -499,10 +511,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="173" y="24" width="641" height="740" key="#test/0.24.1366.744@0.24.1366.744" timestamp="1577339931256" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577446055555">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577446287896">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577446055555" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577446287896" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -515,22 +527,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="323" y="289" key="Github.ShareDialog/0.24.1366.744@0.24.1366.744" timestamp="1577440409057" />
-    <state width="374" height="688" key="GridCell.Tab.0.bottom" timestamp="1577446272851">
+    <state width="312" height="688" key="GridCell.Tab.0.bottom" timestamp="1577479414634">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="374" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577446272851" />
-    <state width="374" height="688" key="GridCell.Tab.0.center" timestamp="1577446272850">
+    <state width="312" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577479414634" />
+    <state width="312" height="688" key="GridCell.Tab.0.center" timestamp="1577479414634">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="374" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577446272850" />
-    <state width="374" height="688" key="GridCell.Tab.0.left" timestamp="1577446272850">
+    <state width="312" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577479414634" />
+    <state width="312" height="688" key="GridCell.Tab.0.left" timestamp="1577479414632">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="374" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577446272850" />
-    <state width="374" height="688" key="GridCell.Tab.0.right" timestamp="1577446272850">
+    <state width="312" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577479414632" />
+    <state width="312" height="688" key="GridCell.Tab.0.right" timestamp="1577479414634">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="374" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577446272850" />
+    <state width="312" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577479414634" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -563,10 +575,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="113" y="38" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1577437832020" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577446065500">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577446295130">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577446065500" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577446295130" />
     <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

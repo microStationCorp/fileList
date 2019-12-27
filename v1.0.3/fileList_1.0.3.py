@@ -31,7 +31,7 @@ def validateExt(ext):
 
 class fileList:
     __root = Tk()
-    __filename = StringVar()
+    fileName = StringVar()
     __outPutFrame = Frame(__root)
     __menuBar = Menu(__root)
     __scrollBarRight = Scrollbar(__outPutFrame)
@@ -40,6 +40,7 @@ class fileList:
     __dirName = ''
     __baseName = ''
     __topEntry = StringVar()
+    _text = StringVar()
 
     def __init__(self):
         self.__root.title("FileList")
@@ -53,23 +54,25 @@ class fileList:
         self.__applicationMenu.add_command(label='About App', command=self.aboutApp)
         self.__applicationMenu.add_command(label='About Dev', command=self.aboutDev)
         self.__applicationMenu.add_command(label="Exit", command=self.quit)
-        self.__menuBar.add_cascade(label="FileList", menu=self.__applicationMenu, font='consolas 10 bold')
+        self.__menuBar.add_cascade(label="FileList", menu=self.__applicationMenu, font='firacode 10 bold')
 
         self.__actionMenu = Menu(self.__menuBar, tearoff=0)
         self.__actionMenu.add_command(label='New file', command=self.newFile, accelerator='Ctrl+N')
         self.__actionMenu.add_command(label='New folder', command=self.newDir, accelerator='Ctrl+Shift+N')
+        self.__actionMenu.add_command(label='Rename', command=self.renameFunc, accelerator='Ctrl+R')
         self.__actionMenu.add_command(label='delete', command=self.deleteContentSelected, accelerator='Ctrl+D')
-        self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu)
+        self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu, font='hack 10')
 
         self.__root.bind('<Control-n>', self.newFile)
         self.__root.bind('<Control-Shift-N>', self.newDir)
         self.__root.bind('<Control-h>', self.shortcutDialog)
         self.__root.bind('<Control-d>', self.deleteContentSelected)
-        self.__filename.trace('w', self.searchFile)
+        self.__root.bind('<Control-r>', self.renameFunc)
+        self.fileName.trace('w', self.searchFile)
 
         self.__outPutFrame.pack(fill=BOTH, expand=True, padx=10, pady=4)
         self.__scrollBarRight.pack(side=RIGHT, fill=Y)
-        self.__listArea = Listbox(self.__outPutFrame, selectmode=EXTENDED)
+        self.__listArea = Listbox(self.__outPutFrame, selectmode=EXTENDED, bd=3)
         self.__listArea.pack(expand=True, fill=BOTH)
         self.__scrollBarBottom.pack(side=BOTTOM, fill=X)
         self.__scrollBarRight.config(command=self.__listArea.yview)
@@ -82,10 +85,10 @@ class fileList:
 
         self.__controlFrame.pack(fill=BOTH, padx=10, pady=8)
         Label(self.__controlFrame, text="Enter path:", font="monaco 10 bold").pack()
-        self.__fname = Entry(self.__controlFrame, textvariable=self.__filename, font='monaco', width=40)
-        self.__fname.pack()
-        self.__fname.focus_set()
-        self.__fname.bind('<Right>', self.rightArrowKey)
+        self.fName = Entry(self.__controlFrame, bd=3, textvariable=self.fileName, font='monaco', width=40)
+        self.fName.pack()
+        self.fName.focus_set()
+        self.fName.bind('<Right>', self.rightArrowKey)
 
     def aboutApp(self):
         __app = Toplevel()
@@ -120,30 +123,30 @@ class fileList:
         self.__root.destroy()
 
     def searchFile(self, *args):
-        if self.__filename.get().endswith(f'{os.sep}{os.sep}'):
-            self.__fname.delete(len(self.__filename.get()) - 1)
-        elif self.__filename.get().endswith(os.sep) and os.path.isfile(os.path.abspath(self.__filename.get())):
+        if self.fileName.get().endswith(f'{os.sep}{os.sep}'):
+            self.fName.delete(len(self.fileName.get()) - 1)
+        elif self.fileName.get().endswith(os.sep) and os.path.isfile(os.path.abspath(self.fileName.get())):
             showinfo('info', 'it is a file')
-            self.__fname.delete(len(self.__filename.get()) - 1)
+            self.fName.delete(len(self.fileName.get()) - 1)
             self.printList()
-        elif self.__filename.get().endswith(os.sep) and os.path.exists(self.__filename.get()):
+        elif self.fileName.get().endswith(os.sep) and os.path.exists(self.fileName.get()):
             self.printList()
-        elif not self.__filename.get().endswith(os.sep) and os.path.exists(os.path.dirname(self.__filename.get())):
+        elif not self.fileName.get().endswith(os.sep) and os.path.exists(os.path.dirname(self.fileName.get())):
             self.printList()
             if self.__listArea.size() == 1:
                 showinfo('info', 'not found')
-                self.__fname.delete(len(self.__filename.get()) - 1)
+                self.fName.delete(len(self.fileName.get()) - 1)
                 self.printList()
-        elif self.__filename.get().endswith(os.sep) and not os.path.exists(os.path.dirname(self.__filename.get())):
+        elif self.fileName.get().endswith(os.sep) and not os.path.exists(os.path.dirname(self.fileName.get())):
             showinfo('info', 'invalid Action')
-            self.__fname.delete(len(self.__filename.get()) - 1)
+            self.fName.delete(len(self.fileName.get()) - 1)
             self.printList()
-        elif self.__filename.get() == '':
+        elif self.fileName.get() == '':
             self.__listArea.delete(0, END)
             self.__root.title("FileList")
 
     def printList(self):
-        self.__dirName, self.__baseName = os.path.split(self.__filename.get())
+        self.__dirName, self.__baseName = os.path.split(self.fileName.get())
         try:
             __list = os.listdir(self.__dirName)
         except:
@@ -159,63 +162,124 @@ class fileList:
                 self.__listArea.insert(END, f'{i}  - (folder)')
         self.__listArea.activate(1)
 
+    def renameDialog(self, w, h):
+        def ren(*args):
+            path = os.path.dirname(self.fileName.get())
+            list = os.listdir(path)
+            if __newName.get() != '' and validateName(__newName.get()):
+                if self.__listArea.get(ACTIVE).endswith('(file)'):
+                    srcFile = self.__listArea.get(ACTIVE)[:-10]
+                    srcName, srcExt = os.path.splitext(srcFile)
+                    newFile = __newName.get() + srcExt
+                    if not newFile in list:
+                        os.rename(os.path.join(path, srcFile), os.path.join(path, newFile))
+                        self.printList()
+                        showinfo('info', 'Rename done')
+                        _renameTop.destroy()
+                    else:
+                        showinfo('info', 'file name already exist')
+                else:
+                    if not __newName.get() in list:
+                        srcFile = self.__listArea.get(ACTIVE)[:-12]
+                        os.rename(os.path.join(path, srcFile), os.path.join(path, __newName.get()))
+                        self.printList()
+                        showinfo('info', 'Rename done')
+                        _renameTop.destroy()
+                    else:
+                        showinfo('info', 'folder name already exist')
+            else:
+                showinfo('info', 'invalid Name')
+
+        __newName = StringVar()
+        x, y = self.sizeOfWindow(w, h)
+        _renameTop = Toplevel()
+        _renameTop.title('Rename Dialog Box')
+        _renameTop.grab_set()
+        _renameTop.geometry(f'{w}x{h}+{x}+{y}')
+        _renameTop.resizable(0, 0)
+        Label(_renameTop, text='Enter New Name :', font='hack 10').pack()
+        _entryTop = Entry(_renameTop, bd=3, textvariable=__newName, width=30)
+        _entryTop.pack(side=TOP, pady=3)
+        _entryTop.bind('<Return>', ren)
+        _entryTop.focus_set()
+        _bFrame = Frame(_renameTop)
+        _bFrame.pack(side=TOP)
+        _buttonTopCancel = Button(_bFrame, bd=3, text="Cancel", command=_renameTop.destroy, font='hack 10')
+        _buttonTopCancel.pack(side=RIGHT, pady=4)
+        _buttonTopRename = Button(_bFrame, bd=3, text="Rename", font='hack 10', command=ren)
+        _buttonTopRename.pack(side=RIGHT, pady=4)
+        Label(_renameTop, text=self._text, font="hack 8").pack(side=BOTTOM)
+
+    def renameFunc(self, *args):
+        if self.fileName.get() != '' and len(self.__listArea.curselection()) == 1 and self.__listArea.get(
+                ACTIVE).startswith(os.pardir) == False:
+            if self.__listArea.get(ACTIVE).endswith('(file)'):
+                self._text = '*file extension can\'t be change'
+                self.renameDialog(300, 120)
+            else:
+                self._text = None
+                self.renameDialog(300, 100)
+        else:
+            showerror('error', 'invalid action')
+
     def openRunFile(self, *args):
         fileName = self.__listArea.get(ACTIVE)
         if fileName.startswith(os.pardir):
-            newAddress = os.path.dirname(os.path.dirname(self.__filename.get()))
-            for i in range(len(self.__filename.get()) - len(newAddress)):
-                self.__fname.delete(len(self.__filename.get()) - 1)
+            newAddress = os.path.dirname(os.path.dirname(self.fileName.get()))
+            for i in range(len(self.fileName.get()) - len(newAddress)):
+                self.fName.delete(len(self.fileName.get()) - 1)
             if newAddress != os.sep:
-                self.__fname.insert(END, os.sep)
+                self.fName.insert(END, os.sep)
         elif fileName.endswith('(file)'):
             fileName = fileName[:-10]
             if os.name == 'posix':
-                subprocess.call(("xdg-open", os.path.join(os.path.dirname(self.__filename.get()), fileName)))
+                subprocess.call(("xdg-open", os.path.join(os.path.dirname(self.fileName.get()), fileName)))
             elif os.name == 'nt':
-                os.startfile(os.path.join(os.path.dirname(self.__filename.get()), fileName))
+                os.startfile(os.path.join(os.path.dirname(self.fileName.get()), fileName))
         elif fileName.endswith('(folder)'):
             fileName = fileName[:-12]
-            dirName = os.path.dirname(self.__filename.get())
+            dirName = os.path.dirname(self.fileName.get())
             newAddress = os.path.join(dirName, fileName)
-            self.__fname.delete(0, END)
-            self.__fname.insert(END, f"{newAddress}{os.sep}")
-        self.__fname.focus_set()
+            self.fName.delete(0, END)
+            self.fName.insert(END, f"{newAddress}{os.sep}")
+        self.fName.focus_set()
 
     def rightArrowKey(self, *args):
         if self.__listArea.get(1).endswith('(folder)'):
             fileName = self.__listArea.get(ACTIVE)
             fileName = fileName[:-12]
-            dirName = os.path.dirname(self.__filename.get())
+            dirName = os.path.dirname(self.fileName.get())
             newAddress = os.path.join(dirName, fileName)
-            self.__fname.delete(0, END)
-            self.__fname.insert(0, newAddress)
+            self.fName.delete(0, END)
+            self.fName.insert(0, newAddress)
 
     def dialogBox(self, title, cmd):
-        x, y = self.sizeOfWindow(300, 70)
+        x, y = self.sizeOfWindow(300, 100)
         self._rootTop = Toplevel()
         self._rootTop.title(title)
         self._rootTop.grab_set()
-        self._rootTop.geometry(f'300x70+{x}+{y}')
+        self._rootTop.geometry(f'300x100+{x}+{y}')
         self._rootTop.resizable(0, 0)
         _bFrame = Frame(self._rootTop)
         _bFrame.pack(side=BOTTOM)
-        self._entryTop = Entry(self._rootTop, textvariable=self.__topEntry, width=30)
+        Label(self._rootTop, text='Enter Name :', font='hack 10').pack()
+        self._entryTop = Entry(self._rootTop, bd=3, textvariable=self.__topEntry, width=30)
         self._entryTop.pack(side=TOP, pady=4)
         self._entryTop.bind('<Return>', cmd)
         self._entryTop.focus_set()
-        _buttonTopCancel = Button(_bFrame, text="cancel", command=self._rootTop.destroy)
+        _buttonTopCancel = Button(_bFrame, bd=3, text="cancel", command=self._rootTop.destroy, font='hack 10')
         _buttonTopCancel.pack(side=RIGHT, pady=4)
-        _buttonTopCreate = Button(_bFrame, text="create", command=cmd)
+        _buttonTopCreate = Button(_bFrame, bd=3, text="create", command=cmd, font='hack 10')
         _buttonTopCreate.pack(side=RIGHT, pady=4)
 
     def newDir(self, *args):
-        if self.__filename.get() != '':
+        if self.fileName.get() != '':
             self.dialogBox('new folder dialog', self.createDir)
         else:
             showinfo('info', 'invalid Path')
 
     def newFile(self, *args):
-        if self.__filename.get() != '':
+        if self.fileName.get() != '':
             self.dialogBox('new file dialog', self.createFile)
         else:
             showinfo('info', 'invalid Path')
@@ -225,7 +289,7 @@ class fileList:
         name, extension = os.path.splitext(fileName)
         if name != '' and extension != '' and validateName(name) and validateExt(extension):
             try:
-                f = open(os.path.join(os.path.dirname(self.__filename.get()), fileName), 'x')
+                f = open(os.path.join(os.path.dirname(self.fileName.get()), fileName), 'x')
                 f.close()
             except:
                 self._rootTop.grab_release()
@@ -244,7 +308,7 @@ class fileList:
         if self.__topEntry.get() != '' and validateName(self.__topEntry.get()) == True:
             fileName = self.__topEntry.get()
             try:
-                os.mkdir(os.path.join(os.path.dirname(self.__filename.get()), fileName))
+                os.mkdir(os.path.join(os.path.dirname(self.fileName.get()), fileName))
             except:
                 self._rootTop.grab_release()
                 showinfo('info', 'folder already exists')
@@ -271,8 +335,8 @@ class fileList:
 4. delete :
     ctrl + D
 
-5. Exit :
-    ctrl +q'''
+5. Rename :
+    ctrl + R'''
 
         x, y = self.sizeOfWindow(300, 370)
         self._shortCutTop = Toplevel()
@@ -303,16 +367,16 @@ class fileList:
 
     def deleteContentSelected(self, *args):
         selectedIndex = self.__listArea.curselection()
-        if len(selectedIndex) != 0 and self.__filename.get() != '' and os.path.exists(
-                os.path.dirname(self.__filename.get())):
+        if len(selectedIndex) != 0 and self.fileName.get() != '' and os.path.exists(
+                os.path.dirname(self.fileName.get())):
             condition = askyesno('info', 'do you want to delete ?')
             if condition:
                 for i in selectedIndex:
                     if self.__listArea.get(i).endswith('(file)'):
-                        os.remove(os.path.join(os.path.dirname(self.__filename.get()), self.__listArea.get(i)[:-10]))
+                        os.remove(os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-10]))
                     elif self.__listArea.get(i).endswith('(folder)'):
                         shutil.rmtree(
-                            os.path.join(os.path.dirname(self.__filename.get()), self.__listArea.get(i)[:-12]))
+                            os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-12]))
                 self.printList()
         else:
             showinfo('info', 'illegal action')
@@ -320,9 +384,20 @@ class fileList:
 
 if __name__ == '__main__':
     try:
-        with open('./extension.txt', 'r') as file:
-            List = fileList()
-            List.run()
+        List = fileList()
+        try:
+            past = open('history.txt', 'r')
+            List.fName.insert(0,past.read())
+            past.close()
+            List.printList()
+        except:
+            past = open('history.txt', 'x')
+        f = open('extension.txt', 'r')
+        f.close()
+        List.run()
+        past = open('history.txt', 'w')
+        past.write(List.fileName.get())
+        past.close()
     except:
         showinfo('info', 'Please download \'extension.txt\' from fileList repository '
                          'link = \'https://github.com/microStationCorp/fileList\'')
