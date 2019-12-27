@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="using this code , you can get">
       <change beforePath="$PROJECT_DIR$/../fileExt/extensionGet.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fileExt/extensionGet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/filelist.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/filelist.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,28 +44,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../fileExt" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.postfix.templates" />
   </component>
-  <component name="RunManager" selected="Python.fileList_1.0.3">
-    <configuration name="extensionGet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="fileExt" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../fileExt" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../fileExt/extensionGet.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.tut1">
     <configuration name="fileList_1.0.3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,9 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fileList_1.0.3" />
-        <item itemvalue="Python.extensionGet" />
         <item itemvalue="Python.tut1" />
+        <item itemvalue="Python.fileList_1.0.3" />
         <item itemvalue="Python.myModule" />
         <item itemvalue="Python.test" />
       </list>
@@ -432,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577440628877</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="small bug fixes">
+      <created>1577441872919</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1577441872919</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -490,10 +471,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="173" y="24" width="641" height="740" key="#test/0.24.1366.744@0.24.1366.744" timestamp="1577339931256" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577440628789">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577443780320">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577440628789" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577443780320" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -506,22 +487,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="323" y="289" key="Github.ShareDialog/0.24.1366.744@0.24.1366.744" timestamp="1577440409057" />
-    <state width="428" height="688" key="GridCell.Tab.0.bottom" timestamp="1577441781227">
+    <state width="428" height="688" key="GridCell.Tab.0.bottom" timestamp="1577443709319">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="428" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577441781227" />
-    <state width="428" height="688" key="GridCell.Tab.0.center" timestamp="1577441781226">
+    <state width="428" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577443709319" />
+    <state width="428" height="688" key="GridCell.Tab.0.center" timestamp="1577443709319">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="428" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577441781226" />
-    <state width="428" height="688" key="GridCell.Tab.0.left" timestamp="1577441781226">
+    <state width="428" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577443709319" />
+    <state width="428" height="688" key="GridCell.Tab.0.left" timestamp="1577443709319">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="428" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577441781226" />
-    <state width="428" height="688" key="GridCell.Tab.0.right" timestamp="1577441781227">
+    <state width="428" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577443709319" />
+    <state width="428" height="688" key="GridCell.Tab.0.right" timestamp="1577443709319">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="428" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577441781227" />
+    <state width="428" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577443709319" />
     <state width="861" height="220" key="GridCell.Tab.1.bottom" timestamp="1576672889589">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -554,10 +535,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="113" y="38" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1577437832020" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577440647992">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1577443796974">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577440647992" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1577443796974" />
     <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
