@@ -213,8 +213,14 @@ class fileList:
         fileName = self.__topEntry.get()
         name, extension = os.path.splitext(fileName)
         if name != '' and extension != '' and validateName(name, 'file'):
-            f = open(os.path.join(os.path.dirname(self.__filename.get()), fileName), 'w+')
-            f.close()
+            try:
+                f = open(os.path.join(os.path.dirname(self.__filename.get()), fileName), 'x')
+                f.close()
+            except:
+                self._rootTop.grab_release()
+                showinfo('info', 'file already exists')
+                self._rootTop.grab_set()
+                return None
             self._rootTop.grab_release()
             showinfo('info', f'{fileName} has created')
             self.printList()
@@ -226,7 +232,13 @@ class fileList:
     def createDir(self, *args):
         if self.__topEntry.get() != '' and validateName(self.__topEntry.get(), 'folder') == True:
             fileName = self.__topEntry.get()
-            os.mkdir(os.path.join(os.path.dirname(self.__filename.get()), fileName))
+            try:
+                os.mkdir(os.path.join(os.path.dirname(self.__filename.get()), fileName))
+            except:
+                self._rootTop.grab_release()
+                showinfo('info','folder already exists')
+                self._rootTop.grab_set()
+                return None
             self._rootTop.grab_release()
             showinfo('info', f'{fileName} has created')
             self.printList()
