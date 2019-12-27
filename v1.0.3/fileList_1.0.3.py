@@ -7,12 +7,20 @@ import re
 import shutil
 
 
-def validateName(name, ftype):
-    fileReg = re.compile('[~`$%^&*{}:;"\',<.>?/\[\]]')
-    folderReg = re.compile('[~`$%^&*{}:;"\',<>?/\[\]]')
-    if ftype == 'file' and fileReg.search(name) is None:
+def validateName(name):
+    Reg = re.compile('[~`$%^&*{}:;"\',<>?/\[\]]')
+    if Reg.search(name) is None:
         return True
-    elif ftype == 'folder' and folderReg.search(name) is None:
+    else:
+        return False
+
+
+def validateExt(ext):
+    with open('extension.txt', 'r') as file:
+        str = file.read()
+        list = str.split('\n')
+        list.pop()
+    if ext in list:
         return True
     else:
         return False
@@ -58,7 +66,7 @@ class fileList:
 
         self.__outPutFrame.pack(fill=BOTH, expand=True, padx=10, pady=4)
         self.__scrollBarRight.pack(side=RIGHT, fill=Y)
-        self.__listArea = Listbox(self.__outPutFrame)
+        self.__listArea = Listbox(self.__outPutFrame, selectmode=EXTENDED)
         self.__listArea.pack(expand=True, fill=BOTH)
         self.__scrollBarBottom.pack(side=BOTTOM, fill=X)
         self.__scrollBarRight.config(command=self.__listArea.yview)
@@ -212,7 +220,7 @@ class fileList:
     def createFile(self, *args):
         fileName = self.__topEntry.get()
         name, extension = os.path.splitext(fileName)
-        if name != '' and extension != '' and validateName(name, 'file'):
+        if name != '' and extension != '' and validateName(name) and validateExt(extension):
             try:
                 f = open(os.path.join(os.path.dirname(self.__filename.get()), fileName), 'x')
                 f.close()
@@ -227,16 +235,16 @@ class fileList:
             self._entryTop.delete(0, END)
             self._rootTop.destroy()
         else:
-            showinfo('info', 'invalid name')
+            showinfo('info', 'invalid filename or extension')
 
     def createDir(self, *args):
-        if self.__topEntry.get() != '' and validateName(self.__topEntry.get(), 'folder') == True:
+        if self.__topEntry.get() != '' and validateName(self.__topEntry.get()) == True:
             fileName = self.__topEntry.get()
             try:
                 os.mkdir(os.path.join(os.path.dirname(self.__filename.get()), fileName))
             except:
                 self._rootTop.grab_release()
-                showinfo('info','folder already exists')
+                showinfo('info', 'folder already exists')
                 self._rootTop.grab_set()
                 return None
             self._rootTop.grab_release()
