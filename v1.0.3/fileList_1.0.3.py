@@ -16,14 +16,17 @@ def validateName(name):
 
 
 def validateExt(ext):
-    with open('extension.txt', 'r') as file:
-        str = file.read()
-        list = str.split('\n')
-        list.pop()
-    if ext in list:
-        return True
-    else:
-        return False
+    try:
+        with open('extension.txt', 'r') as file:
+            str = file.read()
+            list = str.split('\n')
+            list.pop()
+        if ext in list:
+            return True
+        else:
+            return False
+    except:
+        return None
 
 
 class fileList:
@@ -316,5 +319,10 @@ class fileList:
 
 
 if __name__ == '__main__':
-    List = fileList()
-    List.run()
+    try:
+        with open('extension.txt', 'r') as file:
+            List = fileList()
+            List.run()
+    except:
+        showinfo('info', 'Please download \'extension.txt\' from fileList repository '
+                         'link = \'https://github.com/microStationCorp/fileList\'')
