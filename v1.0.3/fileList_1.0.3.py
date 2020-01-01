@@ -17,7 +17,7 @@ def validateName(name):
 
 def validateExt(ext):
     try:
-        with open('extension.txt', 'r') as file:
+        with open(os.path.join(os.path.dirname(sys.argv[0]),'extension.txt'), 'r') as file:
             str = file.read()
             list = str.split('\n')
             list.pop()
@@ -434,16 +434,16 @@ if __name__ == '__main__':
     try:
         List = fileList()
         try:
-            past = open('history.txt', 'r')
+            past=open(os.path.join(os.path.dirname(sys.argv[0]),'history.txt'),'r')
             List.fName.insert(0, past.read())
             past.close()
             List.printList()
         except:
-            past = open('history.txt', 'x')
-        f = open('extension.txt', 'r')
+            past = open(os.path.join(os.path.dirname(sys.argv[0]),'history.txt'), 'x')
+        f = open(os.path.join(os.path.dirname(sys.argv[0]),'extension.txt'), 'r')
         f.close()
         List.run()
-        past = open('history.txt', 'w')
+        past = open(os.path.join(os.path.dirname(sys.argv[0]),'history.txt'), 'w')
         past.write(List.fileName.get())
         past.close()
     except:

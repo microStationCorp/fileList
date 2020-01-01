@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1.0.3/history.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tuvid.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exec" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -488,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577479856046</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="copy paste action added">
+      <created>1577864314646</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1577864314646</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -506,7 +515,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="now can run a file" />
     <MESSAGE value="test branch" />
     <MESSAGE value="now you can use double click and enter button for run and open a folder&#10;no button in this Version" />
     <MESSAGE value="branch1 1st comit" />
@@ -531,7 +539,8 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="now can rename&#10;search experience updated&#10;now app can take your last history" />
     <MESSAGE value="README.md edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.md edited" />
+    <MESSAGE value="copy paste action added" />
+    <option name="LAST_COMMIT_MESSAGE" value="copy paste action added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -546,39 +555,39 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="173" y="24" width="641" height="740" key="#test/0.24.1366.744@0.24.1366.744" timestamp="1577339931256" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577479855913">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577864314041">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577479855913" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577864314041" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog/0.24.1366.744@0.24.1366.744" timestamp="1576947620593" />
-    <state x="232" y="154" width="440" height="476" key="FileChooserDialogImpl" timestamp="1577853205057">
+    <state x="232" y="154" width="440" height="476" key="FileChooserDialogImpl" timestamp="1577876434876">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="232" y="147" key="FileChooserDialogImpl/0.24.1366.706@0.24.1366.706" timestamp="1577786765049" />
-    <state x="232" y="154" width="440" height="476" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1577853205057" />
+    <state x="232" y="154" width="440" height="476" key="FileChooserDialogImpl/0.24.1366.744@0.24.1366.744" timestamp="1577876434876" />
     <state x="323" y="289" key="Github.ShareDialog" timestamp="1577440409057">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="323" y="289" key="Github.ShareDialog/0.24.1366.744@0.24.1366.744" timestamp="1577440409057" />
-    <state width="1343" height="79" key="GridCell.Tab.0.bottom" timestamp="1577864286080">
+    <state width="672" height="173" key="GridCell.Tab.0.bottom" timestamp="1577864326006">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1343" height="79" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577864286080" />
-    <state width="1343" height="79" key="GridCell.Tab.0.center" timestamp="1577864286079">
+    <state width="672" height="173" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1577864326006" />
+    <state width="672" height="173" key="GridCell.Tab.0.center" timestamp="1577864326006">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1343" height="79" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577864286079" />
-    <state width="1343" height="79" key="GridCell.Tab.0.left" timestamp="1577864286078">
+    <state width="672" height="173" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1577864326006" />
+    <state width="672" height="173" key="GridCell.Tab.0.left" timestamp="1577864326006">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1343" height="79" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577864286078" />
-    <state width="1343" height="79" key="GridCell.Tab.0.right" timestamp="1577864286079">
+    <state width="672" height="173" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1577864326006" />
+    <state width="672" height="173" key="GridCell.Tab.0.right" timestamp="1577864326006">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1343" height="79" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577864286079" />
+    <state width="672" height="173" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1577864326006" />
     <state width="1003" height="219" key="GridCell.Tab.1.bottom" timestamp="1577786080482">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
