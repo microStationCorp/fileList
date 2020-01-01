@@ -33,7 +33,7 @@ class fileList:
     __root = Tk()
     fileName = StringVar()
     __outPutFrame = Frame(__root)
-    __menuBar = Menu(__root)
+    __menuBar = Menu(__root, relief=FLAT)
     __scrollBarRight = Scrollbar(__outPutFrame)
     __scrollBarBottom = Scrollbar(__outPutFrame, orient=HORIZONTAL)
     __controlFrame = Frame(__root, bd=2, relief=SUNKEN, pady=8)
@@ -54,13 +54,14 @@ class fileList:
         self.__applicationMenu.add_command(label='About App', command=self.aboutApp)
         self.__applicationMenu.add_command(label='About Dev', command=self.aboutDev)
         self.__applicationMenu.add_command(label="Exit", command=self.quit)
-        self.__menuBar.add_cascade(label="FileList", menu=self.__applicationMenu, font='firacode 10 bold')
+        self.__menuBar.add_cascade(label="FileList", menu=self.__applicationMenu, font='hack 10 bold')
 
         self.__actionMenu = Menu(self.__menuBar, tearoff=0)
         self.__actionMenu.add_command(label='New file', command=self.newFile, accelerator='Ctrl+N')
         self.__actionMenu.add_command(label='New folder', command=self.newDir, accelerator='Ctrl+Shift+N')
         self.__actionMenu.add_command(label='Rename', command=self.renameFunc, accelerator='Ctrl+R')
         self.__actionMenu.add_command(label='delete', command=self.deleteContentSelected, accelerator='Ctrl+D')
+        self.__actionMenu.add_command(label='Copy', command=self.copyItem)
         self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu, font='hack 10')
 
         self.__root.bind('<Control-n>', self.newFile)
@@ -88,7 +89,54 @@ class fileList:
         self.fName = Entry(self.__controlFrame, bd=3, textvariable=self.fileName, font='monaco', width=40)
         self.fName.pack()
         self.fName.focus_set()
-        self.fName.bind('<Right>', self.rightArrowKey)
+
+    def copyItem(self):
+        selectedIndex = self.__listArea.curselection()
+        self.copiedItem=[]
+        if len(selectedIndex) == 0:
+            showerror('error', 'select something')
+        elif self.__listArea.get(selectedIndex[0]).startswith(os.pardir):
+            showerror('error', 'Invalid Selection')
+        else:
+            for i in selectedIndex:
+                if self.__listArea.get(i).endswith('(file)'):
+                    self.copiedItem.append(
+                        os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-10]))
+                else:
+                    self.copiedItem.append(
+                        os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-12]))
+            showinfo('info','copied')
+            self.changeMenu()
+
+    def changeMenu(self):
+        try:
+            index = self.__actionMenu.index('Copy')
+            self.__actionMenu.delete(index)
+            paste = Menu(self.__actionMenu, tearoff=0)
+            paste.add_command(label="ok", command=self.pasteItem)
+            paste.add_command(label='cancel', command=self.cancelProcess)
+            self.__actionMenu.insert_cascade(index, label='Paste', menu=paste)
+        except:
+            index = self.__actionMenu.index('Paste')
+            self.__actionMenu.delete(index)
+            self.__actionMenu.insert_command(index, label="Copy", command=self.copyItem)
+
+    def pasteItem(self):
+        if self.fileName.get()!='':
+            for item in self.copiedItem:
+                if os.path.isdir(item):
+                    shutil.copytree(item,os.path.join(os.path.dirname(self.fileName.get()),os.path.basename(item)))
+                else:
+                    shutil.copy(item,os.path.dirname(self.fileName.get()))
+            showinfo('info', 'pasted')
+            self.printList()
+            self.changeMenu()
+        else:
+            showerror('error','invalid action')
+
+    def cancelProcess(self):
+        print('canceled')
+        self.changeMenu()
 
     def aboutApp(self):
         __app = Toplevel()
@@ -154,7 +202,7 @@ class fileList:
         self.__listArea.delete(0, END)
         self.__root.title(f"{self.__dirName} - FileList")
         __list.sort()
-        self.__listArea.insert(END, f'{os.pardir}Parent Folder')
+        self.__listArea.insert(END, f'{os.pardir} Back')
         for i in __list:
             if i.find(self.__baseName) != -1 and os.path.isfile(os.path.join(self.__dirName, i)):
                 self.__listArea.insert(END, f'{i}  - (file)')
@@ -235,7 +283,10 @@ class fileList:
             if os.name == 'posix':
                 subprocess.call(("xdg-open", os.path.join(os.path.dirname(self.fileName.get()), fileName)))
             elif os.name == 'nt':
-                os.startfile(os.path.join(os.path.dirname(self.fileName.get()), fileName))
+                try:
+                    os.startfile(os.path.join(os.path.dirname(self.fileName.get()), fileName))
+                except:
+                    showerror('error','Unable to open')
         elif fileName.endswith('(folder)'):
             fileName = fileName[:-12]
             dirName = os.path.dirname(self.fileName.get())
@@ -243,15 +294,6 @@ class fileList:
             self.fName.delete(0, END)
             self.fName.insert(END, f"{newAddress}{os.sep}")
         self.fName.focus_set()
-
-    def rightArrowKey(self, *args):
-        if self.__listArea.get(1).endswith('(folder)'):
-            fileName = self.__listArea.get(ACTIVE)
-            fileName = fileName[:-12]
-            dirName = os.path.dirname(self.fileName.get())
-            newAddress = os.path.join(dirName, fileName)
-            self.fName.delete(0, END)
-            self.fName.insert(0, newAddress)
 
     def dialogBox(self, title, cmd):
         x, y = self.sizeOfWindow(300, 100)
@@ -367,9 +409,13 @@ class fileList:
 
     def deleteContentSelected(self, *args):
         selectedIndex = self.__listArea.curselection()
-        if len(selectedIndex) != 0 and self.fileName.get() != '' and os.path.exists(
-                os.path.dirname(self.fileName.get())):
-            condition = askyesno('info', 'do you want to delete ?')
+        if len(selectedIndex) != 0 and os.path.exists(os.path.dirname(self.fileName.get())):
+            if not self.__listArea.get(selectedIndex[0]).startswith(os.pardir):
+                condition = askyesno('info', 'do you want to delete ?')
+            else:
+                showerror('error', 'Invalid selection')
+                return
+
             if condition:
                 for i in selectedIndex:
                     if self.__listArea.get(i).endswith('(file)'):
@@ -383,11 +429,13 @@ class fileList:
 
 
 if __name__ == '__main__':
+    # List = fileList()
+    # List.run()
     try:
         List = fileList()
         try:
             past = open('history.txt', 'r')
-            List.fName.insert(0,past.read())
+            List.fName.insert(0, past.read())
             past.close()
             List.printList()
         except:
