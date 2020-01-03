@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter.messagebox import *
 import re
 import shutil
+import json
 
 
 def validateName(name):
@@ -16,17 +17,14 @@ def validateName(name):
 
 
 def validateExt(ext):
-    try:
-        with open(os.path.join(os.path.dirname(sys.argv[0]),'extension.txt'), 'r') as file:
-            str = file.read()
-            list = str.split('\n')
-            list.pop()
-        if ext in list:
-            return True
-        else:
-            return False
-    except:
-        return None
+    with open('ext.json') as file:
+        data = json.load(file)
+    for key in data:
+        keyList = data[key]
+        for item in keyList:
+            if item == ext:
+                return True
+    return False
 
 
 class fileList:
@@ -135,7 +133,6 @@ class fileList:
             showerror('error','invalid action')
 
     def cancelProcess(self):
-        print('canceled')
         self.changeMenu()
 
     def aboutApp(self):
@@ -440,12 +437,12 @@ if __name__ == '__main__':
             List.printList()
         except:
             past = open(os.path.join(os.path.dirname(sys.argv[0]),'history.txt'), 'x')
-        f = open(os.path.join(os.path.dirname(sys.argv[0]),'extension.txt'), 'r')
+        f = open(os.path.join(os.path.dirname(sys.argv[0]),'ext.json'), 'r')
         f.close()
         List.run()
         past = open(os.path.join(os.path.dirname(sys.argv[0]),'history.txt'), 'w')
         past.write(List.fileName.get())
         past.close()
     except:
-        showinfo('info', 'Please download \'extension.txt\' from fileList repository '
+        showinfo('info', 'Please download \'ext.json\' from fileList repository '
                          'link = \'https://github.com/microStationCorp/fileList\'')
