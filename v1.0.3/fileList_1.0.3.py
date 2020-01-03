@@ -41,6 +41,8 @@ class fileList:
     _text = StringVar()
     movedItem = []
     copiedItem = []
+    filterValue = StringVar()
+    sortValue = StringVar()
 
     def __init__(self):
         self.__root.title("FileList")
@@ -68,6 +70,25 @@ class fileList:
         paste.add_command(label='Cancel', command=self.cancelProcess)
         self.__actionMenu.add_cascade(label='Paste', menu=paste, state='disabled')
         self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu, font='hack 10')
+
+        self.__viewMode = Menu(self.__menuBar, tearoff=0)
+        self.__filter = Menu(self.__viewMode, tearoff=0)
+        self.__filter.add_radiobutton(label='All', variable=self.filterValue, value='All', command=self.printList)
+        self.__filter.add_radiobutton(label='Folder', variable=self.filterValue, value='Folder', command=self.printList)
+        self.__filter.add_radiobutton(label='Video', variable=self.filterValue, value='Video', command=self.printList)
+        self.__filter.add_radiobutton(label='Audio', variable=self.filterValue, value='Audio', command=self.printList)
+        # self.__filter.add_radiobutton(label='Text', variable=self.filterValue, value='Text')
+        self.__filter.add_radiobutton(label='Others', variable=self.filterValue, value='Others',command=self.printList)
+        self.filterValue.set('All')
+        self.__viewMode.add_cascade(label='Filter', menu=self.__filter, state=DISABLED)
+        self.__sort = Menu(self.__viewMode, tearoff=0)
+        self.__sort.add_radiobutton(label='By Size \u2191', variable=self.sortValue, value='su')
+        self.__sort.add_radiobutton(label='By Size \u2193', variable=self.sortValue, value='sd')
+        self.__sort.add_radiobutton(label='By Name \u2191', variable=self.sortValue, value='nu')
+        self.__sort.add_radiobutton(label='By Name \u2193', variable=self.sortValue, value='nd')
+        self.sortValue.set('nd')
+        self.__viewMode.add_cascade(label='Sort', menu=self.__sort, state=DISABLED)
+        self.__menuBar.add_cascade(label='View', menu=self.__viewMode, font='hack 10')
 
         self.__root.bind('<Control-n>', self.newFile)
         self.__root.bind('<Control-Shift-N>', self.newDir)
@@ -163,10 +184,10 @@ class fileList:
                              f'{len(self.copiedItem) - len(rejectList)} files are pasted.\nexcept {text} -> alredy present in the folder')
                 else:
                     showinfo('info', f'{len(self.copiedItem)}files are pasted')
-            elif len(self.movedItem)!=0:
+            elif len(self.movedItem) != 0:
                 for item in self.movedItem:
                     try:
-                        shutil.move(item,os.path.dirname(self.fileName.get()))
+                        shutil.move(item, os.path.dirname(self.fileName.get()))
                     except:
                         rejectList.add(os.path.basename(item))
                 if len(rejectList) != 0:
@@ -236,9 +257,12 @@ class fileList:
             self.printList()
         elif not self.fileName.get().endswith(os.sep) and os.path.exists(os.path.dirname(self.fileName.get())):
             self.printList()
-            if self.__listArea.size() == 1:
+            if self.__listArea.size() == 1 and self.filterValue.get() == 'All':
                 showinfo('info', 'not found')
                 self.fName.delete(len(self.fileName.get()) - 1)
+                self.printList()
+            elif self.__listArea.size() == 1 and self.filterValue.get() != 'All':
+                self.filterValue.set('All')
                 self.printList()
         elif self.fileName.get().endswith(os.sep) and not os.path.exists(os.path.dirname(self.fileName.get())):
             showinfo('info', 'invalid Action')
@@ -247,11 +271,59 @@ class fileList:
         elif self.fileName.get() == '':
             self.__listArea.delete(0, END)
             self.__root.title("FileList")
+            self.__viewMode.entryconfig('Sort', state=DISABLED)
+            self.__viewMode.entryconfig('Filter', state=DISABLED)
+        if self.__listArea.size() != 0:
+            self.__viewMode.entryconfig('Sort', state=NORMAL)
+            self.__viewMode.entryconfig('Filter', state=NORMAL)
+
+    def filterList(self, dList, filterOption, parent):
+        newList = []
+        if filterOption == 'All':
+            return dList
+        elif filterOption == 'Folder':
+            for i in dList:
+                if os.path.isdir(os.path.join(parent, i)):
+                    newList.append(i)
+        elif filterOption == 'Audio':
+            with open('ext.json') as file:
+                data = json.load(file)
+            for i in dList:
+                if os.path.isfile(os.path.join(parent, i)):
+                    name, ext = os.path.splitext(i)
+                    for item in data['audio']:
+                        if ext == item:
+                            newList.append(i)
+                            break
+        elif filterOption == 'Video':
+            with open('ext.json') as file:
+                data = json.load(file)
+            for i in dList:
+                if os.path.isfile(os.path.join(parent, i)):
+                    name, ext = os.path.splitext(i)
+                    for item in data['video']:
+                        if ext == item:
+                            newList.append(i)
+                            break
+        elif filterOption=='Others':
+            with open('ext.json') as file:
+                data=json.load(file)
+            for i in dList:
+                if os.path.isfile(os.path.join(parent,i)):
+                    name,ext=os.path.splitext(i)
+                    for key in data:
+                        if key=='video' or key=='audio':
+                            continue
+                        for item in data[key]:
+                            if ext==item:
+                                newList.append(i)
+                                break
+        return newList
 
     def printList(self):
         self.__dirName, self.__baseName = os.path.split(self.fileName.get())
         try:
-            __list = os.listdir(self.__dirName)
+            __list = self.filterList(os.listdir(self.__dirName), self.filterValue.get(), self.__dirName)
         except:
             return
         self.__listArea.delete(0, END)
@@ -328,6 +400,7 @@ class fileList:
     def openRunFile(self, *args):
         fileName = self.__listArea.get(ACTIVE)
         if fileName.startswith(os.pardir):
+            self.filterValue.set('All')
             newAddress = os.path.dirname(os.path.dirname(self.fileName.get()))
             for i in range(len(self.fileName.get()) - len(newAddress)):
                 self.fName.delete(len(self.fileName.get()) - 1)
@@ -343,6 +416,7 @@ class fileList:
                 except:
                     showerror('error', 'Unable to open')
         elif fileName.endswith('(folder)'):
+            self.filterValue.set('All')
             fileName = fileName[:-12]
             dirName = os.path.dirname(self.fileName.get())
             newAddress = os.path.join(dirName, fileName)
