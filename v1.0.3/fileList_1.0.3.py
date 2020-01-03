@@ -39,6 +39,8 @@ class fileList:
     __baseName = ''
     __topEntry = StringVar()
     _text = StringVar()
+    movedItem = []
+    copiedItem = []
 
     def __init__(self):
         self.__root.title("FileList")
@@ -60,9 +62,10 @@ class fileList:
         self.__actionMenu.add_command(label='Rename', command=self.renameFunc, accelerator='Ctrl+R')
         self.__actionMenu.add_command(label='delete', command=self.deleteContentSelected, accelerator='Ctrl+D')
         self.__actionMenu.add_command(label='Copy', command=self.copyItem)
+        self.__actionMenu.add_command(label='Move', command=self.moveItem)
         paste = Menu(self.__actionMenu, tearoff=0)
-        paste.add_command(label='Ok',command=self.pasteItem)
-        paste.add_command(label='Cancel',command=self.cancelProcess)
+        paste.add_command(label='Ok', command=self.pasteItem)
+        paste.add_command(label='Cancel', command=self.cancelProcess)
         self.__actionMenu.add_cascade(label='Paste', menu=paste, state='disabled')
         self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu, font='hack 10')
 
@@ -107,46 +110,88 @@ class fileList:
                 else:
                     self.copiedItem.append(
                         os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-12]))
-            showinfo('info', 'copied')
             self.__actionMenu.entryconfig('Copy', state='disabled')
+            self.__actionMenu.entryconfig('Move', state='disabled')
+            self.__actionMenu.entryconfig('Paste', state='normal')
+
+    def moveItem(self):
+        selectedIndex = self.__listArea.curselection()
+        self.movedItem = []
+        if len(selectedIndex) == 0:
+            showerror('error', 'select something')
+        elif self.__listArea.get(selectedIndex[0]).startswith(os.pardir):
+            showerror('error', 'Invalid Selection')
+        else:
+            for i in selectedIndex:
+                if self.__listArea.get(i).endswith('(file)'):
+                    self.movedItem.append(
+                        os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-10]))
+                else:
+                    self.movedItem.append(
+                        os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-12]))
+            self.__actionMenu.entryconfig('Copy', state='disabled')
+            self.__actionMenu.entryconfig('Move', state='disabled')
             self.__actionMenu.entryconfig('Paste', state='normal')
 
     def pasteItem(self):
-        rejectList=set()
+        rejectList = set()
         if self.fileName.get() != '':
-            for item in self.copiedItem:
-                if os.path.isdir(item):
+            if len(self.copiedItem) != 0:
+                for item in self.copiedItem:
+                    if os.path.isdir(item):
+                        try:
+                            shutil.copytree(item,
+                                            os.path.join(os.path.dirname(self.fileName.get()), os.path.basename(item)))
+                        except:
+                            rejectList.add(os.path.basename(item))
+                    else:
+                        files = os.listdir(os.path.dirname(self.fileName.get()))
+                        presency = False
+                        for file in files:
+                            if file == os.path.basename(item):
+                                presency = True
+                                break
+                        if presency:
+                            rejectList.add(os.path.basename(item))
+                        else:
+                            shutil.copy2(item, os.path.dirname(self.fileName.get()))
+                if len(rejectList) != 0:
+                    text = ''
+                    for item in rejectList:
+                        text = text + item + ','
+                    showinfo('info',
+                             f'{len(self.copiedItem) - len(rejectList)} files are pasted.\nexcept {text} -> alredy present in the folder')
+                else:
+                    showinfo('info', f'{len(self.copiedItem)}files are pasted')
+            elif len(self.movedItem)!=0:
+                for item in self.movedItem:
                     try:
-                        shutil.copytree(item, os.path.join(os.path.dirname(self.fileName.get()), os.path.basename(item)))
+                        shutil.move(item,os.path.dirname(self.fileName.get()))
                     except:
                         rejectList.add(os.path.basename(item))
+                if len(rejectList) != 0:
+                    text = ''
+                    for item in rejectList:
+                        text = text + item + ','
+                    showinfo('info',
+                             f'{len(self.movedItem) - len(rejectList)} files are pasted.\nexcept {text} -> alredy present in the folder')
                 else:
-                    files=os.listdir(os.path.dirname(self.fileName.get()))
-                    presency=False
-                    for file in files:
-                        if file==os.path.basename(item):
-                            presency=True
-                            break
-                    if presency:
-                        rejectList.add(os.path.basename(item))
-                    else:
-                        shutil.copy(item, os.path.dirname(self.fileName.get()))
-            if len(rejectList)!=0:
-                text=''
-                for item in rejectList:
-                    text=text+item+','
-                showinfo('info',f'{len(self.copiedItem)-len(rejectList)} files are pasted.\nexcept {text} -> alredy present in the folder')
-            else:
-                showinfo('info',f'{len(self.copiedItem)}files are pasted')
+                    showinfo('info', f'{len(self.movedItem)}files are pasted')
             self.printList()
             self.__actionMenu.entryconfig('Copy', state='normal')
+            self.__actionMenu.entryconfig('Move', state='normal')
             self.__actionMenu.entryconfig('Paste', state='disabled')
+            self.movedItem = []
+            self.copiedItem = []
         else:
             showerror('error', 'invalid action')
 
     def cancelProcess(self):
         self.__actionMenu.entryconfig('Copy', state='normal')
+        self.__actionMenu.entryconfig('Move', state='normal')
         self.__actionMenu.entryconfig('Paste', state='disabled')
+        self.movedItem = []
+        self.copiedItem = []
 
     def aboutApp(self):
         __app = Toplevel()
