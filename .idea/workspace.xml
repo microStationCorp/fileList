@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/v1.0.3/ext.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.3/extension.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -498,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577864314646</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="ext.json added instead of extension.txt, and validate extension function changed">
+      <created>1578029838590</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1578029838590</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -516,7 +521,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test branch" />
     <MESSAGE value="now you can use double click and enter button for run and open a folder&#10;no button in this Version" />
     <MESSAGE value="branch1 1st comit" />
     <MESSAGE value="final commit" />
@@ -541,7 +545,8 @@
     <MESSAGE value="now can rename&#10;search experience updated&#10;now app can take your last history" />
     <MESSAGE value="README.md edited" />
     <MESSAGE value="copy paste action added" />
-    <option name="LAST_COMMIT_MESSAGE" value="copy paste action added" />
+    <MESSAGE value="ext.json added instead of extension.txt, and validate extension function changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="ext.json added instead of extension.txt, and validate extension function changed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -556,10 +561,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="173" y="24" width="641" height="740" key="#test/0.24.1366.744@0.24.1366.744" timestamp="1577339931256" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1577864314041">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1578029838246">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1577864314041" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1578029838246" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -573,22 +578,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="323" y="289" key="Github.ShareDialog/0.24.1366.744@0.24.1366.744" timestamp="1577440409057" />
-    <state width="421" height="688" key="GridCell.Tab.0.bottom" timestamp="1578029664528">
+    <state width="421" height="688" key="GridCell.Tab.0.bottom" timestamp="1578032508112">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="421" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1578029664528" />
-    <state width="421" height="688" key="GridCell.Tab.0.center" timestamp="1578029664528">
+    <state width="421" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1578032508112" />
+    <state width="421" height="688" key="GridCell.Tab.0.center" timestamp="1578032508112">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="421" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1578029664528" />
-    <state width="421" height="688" key="GridCell.Tab.0.left" timestamp="1578029664528">
+    <state width="421" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1578032508112" />
+    <state width="421" height="688" key="GridCell.Tab.0.left" timestamp="1578032508112">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="421" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1578029664528" />
-    <state width="421" height="688" key="GridCell.Tab.0.right" timestamp="1578029664528">
+    <state width="421" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1578032508112" />
+    <state width="421" height="688" key="GridCell.Tab.0.right" timestamp="1578032508112">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="421" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1578029664528" />
+    <state width="421" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1578032508112" />
     <state width="1003" height="219" key="GridCell.Tab.1.bottom" timestamp="1577786080482">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

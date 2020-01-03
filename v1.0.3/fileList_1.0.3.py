@@ -60,6 +60,10 @@ class fileList:
         self.__actionMenu.add_command(label='Rename', command=self.renameFunc, accelerator='Ctrl+R')
         self.__actionMenu.add_command(label='delete', command=self.deleteContentSelected, accelerator='Ctrl+D')
         self.__actionMenu.add_command(label='Copy', command=self.copyItem)
+        paste = Menu(self.__actionMenu, tearoff=0)
+        paste.add_command(label='Ok',command=self.pasteItem)
+        paste.add_command(label='Cancel',command=self.cancelProcess)
+        self.__actionMenu.add_cascade(label='Paste', menu=paste, state='disabled')
         self.__menuBar.add_cascade(label="Action", menu=self.__actionMenu, font='hack 10')
 
         self.__root.bind('<Control-n>', self.newFile)
@@ -90,7 +94,7 @@ class fileList:
 
     def copyItem(self):
         selectedIndex = self.__listArea.curselection()
-        self.copiedItem=[]
+        self.copiedItem = []
         if len(selectedIndex) == 0:
             showerror('error', 'select something')
         elif self.__listArea.get(selectedIndex[0]).startswith(os.pardir):
@@ -103,37 +107,46 @@ class fileList:
                 else:
                     self.copiedItem.append(
                         os.path.join(os.path.dirname(self.fileName.get()), self.__listArea.get(i)[:-12]))
-            showinfo('info','copied')
-            self.changeMenu()
-
-    def changeMenu(self):
-        try:
-            index = self.__actionMenu.index('Copy')
-            self.__actionMenu.delete(index)
-            paste = Menu(self.__actionMenu, tearoff=0)
-            paste.add_command(label="ok", command=self.pasteItem)
-            paste.add_command(label='cancel', command=self.cancelProcess)
-            self.__actionMenu.insert_cascade(index, label='Paste', menu=paste)
-        except:
-            index = self.__actionMenu.index('Paste')
-            self.__actionMenu.delete(index)
-            self.__actionMenu.insert_command(index, label="Copy", command=self.copyItem)
+            showinfo('info', 'copied')
+            self.__actionMenu.entryconfig('Copy', state='disabled')
+            self.__actionMenu.entryconfig('Paste', state='normal')
 
     def pasteItem(self):
-        if self.fileName.get()!='':
+        rejectList=set()
+        if self.fileName.get() != '':
             for item in self.copiedItem:
                 if os.path.isdir(item):
-                    shutil.copytree(item,os.path.join(os.path.dirname(self.fileName.get()),os.path.basename(item)))
+                    try:
+                        shutil.copytree(item, os.path.join(os.path.dirname(self.fileName.get()), os.path.basename(item)))
+                    except:
+                        rejectList.add(os.path.basename(item))
                 else:
-                    shutil.copy(item,os.path.dirname(self.fileName.get()))
-            showinfo('info', 'pasted')
+                    files=os.listdir(os.path.dirname(self.fileName.get()))
+                    presency=False
+                    for file in files:
+                        if file==os.path.basename(item):
+                            presency=True
+                            break
+                    if presency:
+                        rejectList.add(os.path.basename(item))
+                    else:
+                        shutil.copy(item, os.path.dirname(self.fileName.get()))
+            if len(rejectList)!=0:
+                text=''
+                for item in rejectList:
+                    text=text+item+','
+                showinfo('info',f'{len(self.copiedItem)-len(rejectList)} files are pasted.\nexcept {text} -> alredy present in the folder')
+            else:
+                showinfo('info',f'{len(self.copiedItem)}files are pasted')
             self.printList()
-            self.changeMenu()
+            self.__actionMenu.entryconfig('Copy', state='normal')
+            self.__actionMenu.entryconfig('Paste', state='disabled')
         else:
-            showerror('error','invalid action')
+            showerror('error', 'invalid action')
 
     def cancelProcess(self):
-        self.changeMenu()
+        self.__actionMenu.entryconfig('Copy', state='normal')
+        self.__actionMenu.entryconfig('Paste', state='disabled')
 
     def aboutApp(self):
         __app = Toplevel()
@@ -283,7 +296,7 @@ class fileList:
                 try:
                     os.startfile(os.path.join(os.path.dirname(self.fileName.get()), fileName))
                 except:
-                    showerror('error','Unable to open')
+                    showerror('error', 'Unable to open')
         elif fileName.endswith('(folder)'):
             fileName = fileName[:-12]
             dirName = os.path.dirname(self.fileName.get())
@@ -426,8 +439,6 @@ class fileList:
 
 
 if __name__ == '__main__':
-    # List = fileList()
-    # List.run()
     try:
         List = fileList()
         try:
