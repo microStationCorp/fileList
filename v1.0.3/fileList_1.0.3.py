@@ -78,14 +78,14 @@ class fileList:
         self.__filter.add_radiobutton(label='Video', variable=self.filterValue, value='Video', command=self.printList)
         self.__filter.add_radiobutton(label='Audio', variable=self.filterValue, value='Audio', command=self.printList)
         # self.__filter.add_radiobutton(label='Text', variable=self.filterValue, value='Text')
-        self.__filter.add_radiobutton(label='Others', variable=self.filterValue, value='Others',command=self.printList)
+        self.__filter.add_radiobutton(label='Others', variable=self.filterValue, value='Others', command=self.printList)
         self.filterValue.set('All')
         self.__viewMode.add_cascade(label='Filter', menu=self.__filter, state=DISABLED)
         self.__sort = Menu(self.__viewMode, tearoff=0)
-        self.__sort.add_radiobutton(label='By Size \u2191', variable=self.sortValue, value='su')
-        self.__sort.add_radiobutton(label='By Size \u2193', variable=self.sortValue, value='sd')
-        self.__sort.add_radiobutton(label='By Name \u2191', variable=self.sortValue, value='nu')
-        self.__sort.add_radiobutton(label='By Name \u2193', variable=self.sortValue, value='nd')
+        self.__sort.add_radiobutton(label='By Size \u2191', variable=self.sortValue, value='su', command=self.printList)
+        self.__sort.add_radiobutton(label='By Size \u2193', variable=self.sortValue, value='sd', command=self.printList)
+        self.__sort.add_radiobutton(label='By Name \u2191', variable=self.sortValue, value='nu', command=self.printList)
+        self.__sort.add_radiobutton(label='By Name \u2193', variable=self.sortValue, value='nd', command=self.printList)
         self.sortValue.set('nd')
         self.__viewMode.add_cascade(label='Sort', menu=self.__sort, state=DISABLED)
         self.__menuBar.add_cascade(label='View', menu=self.__viewMode, font='hack 10')
@@ -277,6 +277,64 @@ class fileList:
             self.__viewMode.entryconfig('Sort', state=NORMAL)
             self.__viewMode.entryconfig('Filter', state=NORMAL)
 
+    def getSizeDict(self, dList):
+        dict = {}
+        for i in dList:
+            path = os.path.join(os.path.dirname(self.fileName.get()), i)
+            if os.path.isfile(path):
+                dict.update({os.path.getsize(path): i})
+            else:
+                size = 0
+                for dirPath, dirName, fileName in os.walk(path):
+                    for f in fileName:
+                        fp = os.path.join(dirPath, f)
+                        if not os.path.islink(fp):
+                            size += os.path.getsize(fp)
+                dict.update({size: i})
+        return dict
+
+    def sortedList(self, dList, sortMethod):
+        tempList = []
+        if sortMethod == 'nd':
+            for item in dList:
+                tempList.append(item.lower())
+            tempList.sort()
+            for i in range(len(tempList)):
+                for item in range(i, len(dList)):
+                    if tempList[i] == dList[item].lower():
+                        temp = dList[i]
+                        dList[i] = dList[item]
+                        dList[item] = temp
+                        break
+        elif sortMethod == 'sd':
+            sizeDict = self.getSizeDict(dList)
+            newDict = {}
+            for key in sorted(sizeDict.keys()):
+                newDict.update({key: sizeDict[key]})
+            dList.clear()
+            for i in newDict:
+                dList.append(newDict[i])
+        elif sortMethod == 'su':
+            sizeDict = self.getSizeDict(dList)
+            newDict = {}
+            for key in sorted(sizeDict.keys(), reverse=True):
+                newDict.update({key: sizeDict[key]})
+            dList.clear()
+            for i in newDict:
+                dList.append(newDict[i])
+        elif sortMethod == 'nu':
+            for item in dList:
+                tempList.append(item.lower())
+            tempList.sort(reverse=True)
+            for i in range(len(tempList)):
+                for item in range(i, len(dList)):
+                    if tempList[i] == dList[item].lower():
+                        temp = dList[i]
+                        dList[i] = dList[item]
+                        dList[item] = temp
+                        break
+        return dList
+
     def filterList(self, dList, filterOption, parent):
         newList = []
         if filterOption == 'All':
@@ -305,17 +363,17 @@ class fileList:
                         if ext == item:
                             newList.append(i)
                             break
-        elif filterOption=='Others':
+        elif filterOption == 'Others':
             with open('ext.json') as file:
-                data=json.load(file)
+                data = json.load(file)
             for i in dList:
-                if os.path.isfile(os.path.join(parent,i)):
-                    name,ext=os.path.splitext(i)
+                if os.path.isfile(os.path.join(parent, i)):
+                    name, ext = os.path.splitext(i)
                     for key in data:
-                        if key=='video' or key=='audio':
+                        if key == 'video' or key == 'audio':
                             continue
                         for item in data[key]:
-                            if ext==item:
+                            if ext == item:
                                 newList.append(i)
                                 break
         return newList
@@ -323,12 +381,12 @@ class fileList:
     def printList(self):
         self.__dirName, self.__baseName = os.path.split(self.fileName.get())
         try:
-            __list = self.filterList(os.listdir(self.__dirName), self.filterValue.get(), self.__dirName)
+            __templist = self.filterList(os.listdir(self.__dirName), self.filterValue.get(), self.__dirName)
         except:
             return
         self.__listArea.delete(0, END)
         self.__root.title(f"{self.__dirName} - FileList")
-        __list.sort()
+        __list = self.sortedList(__templist, self.sortValue.get())
         self.__listArea.insert(END, f'{os.pardir} Back')
         for i in __list:
             if i.find(self.__baseName) != -1 and os.path.isfile(os.path.join(self.__dirName, i)):
