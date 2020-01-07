@@ -77,13 +77,11 @@ class fileList:
         self.__filter.add_radiobutton(label='Folder', variable=self.filterValue, value='Folder', command=self.printList)
         self.__filter.add_radiobutton(label='Video', variable=self.filterValue, value='Video', command=self.printList)
         self.__filter.add_radiobutton(label='Audio', variable=self.filterValue, value='Audio', command=self.printList)
-        # self.__filter.add_radiobutton(label='Text', variable=self.filterValue, value='Text')
         self.__filter.add_radiobutton(label='Others', variable=self.filterValue, value='Others', command=self.printList)
         self.filterValue.set('All')
         self.__viewMode.add_cascade(label='Filter', menu=self.__filter, state=DISABLED)
         self.__sort = Menu(self.__viewMode, tearoff=0)
-        self.__sort.add_radiobutton(label='By Size \u2191', variable=self.sortValue, value='su', command=self.printList)
-        self.__sort.add_radiobutton(label='By Size \u2193', variable=self.sortValue, value='sd', command=self.printList)
+
         self.__sort.add_radiobutton(label='By Name \u2191', variable=self.sortValue, value='nu', command=self.printList)
         self.__sort.add_radiobutton(label='By Name \u2193', variable=self.sortValue, value='nd', command=self.printList)
         self.sortValue.set('nd')
@@ -277,22 +275,6 @@ class fileList:
             self.__viewMode.entryconfig('Sort', state=NORMAL)
             self.__viewMode.entryconfig('Filter', state=NORMAL)
 
-    def getSizeDict(self, dList):
-        dict = {}
-        for i in dList:
-            path = os.path.join(os.path.dirname(self.fileName.get()), i)
-            if os.path.isfile(path):
-                dict.update({os.path.getsize(path): i})
-            else:
-                size = 0
-                for dirPath, dirName, fileName in os.walk(path):
-                    for f in fileName:
-                        fp = os.path.join(dirPath, f)
-                        if not os.path.islink(fp):
-                            size += os.path.getsize(fp)
-                dict.update({size: i})
-        return dict
-
     def sortedList(self, dList, sortMethod):
         tempList = []
         if sortMethod == 'nd':
@@ -306,22 +288,6 @@ class fileList:
                         dList[i] = dList[item]
                         dList[item] = temp
                         break
-        elif sortMethod == 'sd':
-            sizeDict = self.getSizeDict(dList)
-            newDict = {}
-            for key in sorted(sizeDict.keys()):
-                newDict.update({key: sizeDict[key]})
-            dList.clear()
-            for i in newDict:
-                dList.append(newDict[i])
-        elif sortMethod == 'su':
-            sizeDict = self.getSizeDict(dList)
-            newDict = {}
-            for key in sorted(sizeDict.keys(), reverse=True):
-                newDict.update({key: sizeDict[key]})
-            dList.clear()
-            for i in newDict:
-                dList.append(newDict[i])
         elif sortMethod == 'nu':
             for item in dList:
                 tempList.append(item.lower())

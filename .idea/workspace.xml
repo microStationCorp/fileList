@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd91195c-a48e-4faa-be41-b8e1eb0df277" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v1.0.3/history.txt" beforeDir="false" afterPath="$PROJECT_DIR$/v1.0.3/history.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
       <recent name="$PROJECT_DIR$/v1.0.3" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.fileList_1.0.3">
     <configuration name="Text-1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="filelist" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,6 +83,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/v1.0.3/fileList_1.0.3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="filelist" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../page.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -134,34 +154,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tuvid" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="filelist" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../tuvid.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.test1" />
         <item itemvalue="Python.fileList_1.0.3" />
+        <item itemvalue="Python.test1" />
+        <item itemvalue="Python.page" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.Text-1" />
-        <item itemvalue="Python.tuvid" />
       </list>
     </recent_temporary>
   </component>
@@ -524,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578078837870</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="sort functions added">
+      <created>1578144133801</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1578144133801</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="windows bug fixes" />
     <MESSAGE value="now can create new folder and file using shortcut key , ctrl+n and Strl+shft+N" />
     <MESSAGE value="window position and new shortcut window added" />
     <MESSAGE value="validation added" />
@@ -567,7 +572,8 @@
     <MESSAGE value="copy paste menu function updated" />
     <MESSAGE value="move function added" />
     <MESSAGE value="filter menu added, it works fine&#10;sort menu added function not added" />
-    <option name="LAST_COMMIT_MESSAGE" value="filter menu added, it works fine&#10;sort menu added function not added" />
+    <MESSAGE value="sort functions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="sort functions added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="48" y="57" width="800" height="673" key="#Code_Folding" timestamp="1576642528529">
@@ -582,10 +588,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="173" y="24" width="641" height="740" key="#test/0.24.1366.744@0.24.1366.744" timestamp="1577339931256" />
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1578078837160">
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2" timestamp="1578144133189">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1578078837160" />
+    <state x="60" y="24" width="769" height="740" key="CommitChangelistDialog2/0.24.1366.744@0.24.1366.744" timestamp="1578144133189" />
     <state x="100" y="124" width="763" height="543" key="DiffContextDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -599,22 +605,22 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="323" y="289" key="Github.ShareDialog/0.24.1366.744@0.24.1366.744" timestamp="1577440409057" />
-    <state width="1168" height="688" key="GridCell.Tab.0.bottom" timestamp="1578144025986">
+    <state width="365" height="595" key="GridCell.Tab.0.bottom" timestamp="1578390439987">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1168" height="688" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1578144025986" />
-    <state width="1168" height="688" key="GridCell.Tab.0.center" timestamp="1578144025986">
+    <state width="365" height="595" key="GridCell.Tab.0.bottom/0.24.1366.744@0.24.1366.744" timestamp="1578390439987" />
+    <state width="365" height="595" key="GridCell.Tab.0.center" timestamp="1578390439986">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1168" height="688" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1578144025986" />
-    <state width="1168" height="688" key="GridCell.Tab.0.left" timestamp="1578144025986">
+    <state width="365" height="595" key="GridCell.Tab.0.center/0.24.1366.744@0.24.1366.744" timestamp="1578390439986" />
+    <state width="365" height="595" key="GridCell.Tab.0.left" timestamp="1578390439985">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1168" height="688" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1578144025986" />
-    <state width="1168" height="688" key="GridCell.Tab.0.right" timestamp="1578144025986">
+    <state width="365" height="595" key="GridCell.Tab.0.left/0.24.1366.744@0.24.1366.744" timestamp="1578390439985" />
+    <state width="365" height="595" key="GridCell.Tab.0.right" timestamp="1578390439986">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state width="1168" height="688" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1578144025986" />
+    <state width="365" height="595" key="GridCell.Tab.0.right/0.24.1366.744@0.24.1366.744" timestamp="1578390439986" />
     <state width="1003" height="219" key="GridCell.Tab.1.bottom" timestamp="1577786080482">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -647,10 +653,10 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="113" y="38" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1578028834002" />
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1578078903510">
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2" timestamp="1578144239202">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1578078903510" />
+    <state x="44" y="132" width="800" height="524" key="Vcs.Push.Dialog.v2/0.24.1366.744@0.24.1366.744" timestamp="1578144239202" />
     <state x="100" y="124" width="763" height="543" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1576947620593">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
